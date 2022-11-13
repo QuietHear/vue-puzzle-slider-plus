@@ -5,6 +5,12 @@
 ## 安装
 	npm i vue-puzzle-slider-plus
 
+## 使用
+	import vuePermissionBreadsPlus from "vue-puzzle-slider-plus";
+	import "vue-puzzle-slider-plus/index.css";
+	
+	app.use(vuePermissionBreadsPlus);
+
 
 ## 1. 参数
 * `showBtn`：是否显示点击按钮-->Boolean;非必传;默认*true*

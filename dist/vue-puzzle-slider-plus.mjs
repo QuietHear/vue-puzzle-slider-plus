@@ -1,7 +1,7 @@
 import { ref as o, onMounted as Di, openBlock as a, createElementBlock as K, createTextVNode as Ei, createCommentVNode as O, normalizeClass as y, createElementVNode as Q, toDisplayString as hi, nextTick as gi, createStaticVNode as ji } from "vue";
-const Vi = (c, l) => {
+const Vi = (c, U) => {
   const j = c.__vccOpts || c;
-  for (const [I, f] of l)
+  for (const [I, f] of U)
     j[I] = f;
   return j;
 }, Bi = {
@@ -40,7 +40,7 @@ const Vi = (c, l) => {
       required: !0
     }
   },
-  setup(c, { attrs: l, slots: j, emit: I, expose: f }) {
+  setup(c, { attrs: U, slots: j, emit: I, expose: f }) {
     let b = o(!0);
     Di(() => {
       setTimeout(() => {
@@ -49,8 +49,8 @@ const Vi = (c, l) => {
     });
     let S = o(!1), Qi = o(!1), z = o(!1), q = o(!1), V = o(""), _ = o(!1), M = o(!1), Z = o(!1), ei = o(!1), p = o(0), d = o(0);
     const Ci = o(6);
-    let T = o(null), W = o(""), n = o(!1), N = o(0), P = o(!1), B = o(0), w = o(0), t = o(0), li = o(0), X = o(0);
-    const Ui = () => {
+    let T = o(null), W = o(""), n = o(!1), N = o(0), P = o(!1), B = o(0), w = o(0), t = o(0), Ui = o(0), X = o(0);
+    const li = () => {
       window.addEventListener("click", r, !1);
     }, Si = (i, Y) => {
       let h = i.matches || i.webkitMatchesSelector || i.mozMatchesSelector || i.msMatchesSelector;
@@ -63,7 +63,7 @@ const Vi = (c, l) => {
           oi();
         });
       }, 1e3)));
-    }, k = o(50), U = o(50);
+    }, k = o(50), l = o(50);
     let J = o([]), L = o(0), $ = o(0), E = o(0);
     const A = o(0), v = o(0), e = o(0), ii = o(0), Ii = o(0);
     let x = o(0);
@@ -73,9 +73,9 @@ const Vi = (c, l) => {
       else {
         n.value = !0, J.value = [...ai()], x.value = Math.floor(
           Math.random() * (Ri.value - Yi.value + 1) + Yi.value
-        ), A.value = c.space + k.value / 2, v.value = s.value.width - c.space - k.value, ii.value = c.space, Ii.value = s.value.height - c.space - U.value;
+        ), A.value = c.space + k.value / 2, v.value = s.value.width - c.space - k.value, ii.value = c.space, Ii.value = s.value.height - c.space - l.value;
         for (let i = 0; i < J.value.length; i++)
-          J.value[i].direction === "left" && J.value[i].much === "outside" ? A.value = c.space + x.value + k.value / 2 : J.value[i].direction === "right" && J.value[i].much === "outside" ? v.value = s.value.width - x.value - c.space - k.value : J.value[i].direction === "top" && J.value[i].much === "outside" ? ii.value = c.space + x.value : J.value[i].direction === "bottom" && J.value[i].much === "outside" && (Ii.value = s.value.height - x.value - c.space - U.value);
+          J.value[i].direction === "left" && J.value[i].much === "outside" ? A.value = c.space + x.value + k.value / 2 : J.value[i].direction === "right" && J.value[i].much === "outside" ? v.value = s.value.width - x.value - c.space - k.value : J.value[i].direction === "top" && J.value[i].much === "outside" ? ii.value = c.space + x.value : J.value[i].direction === "bottom" && J.value[i].much === "outside" && (Ii.value = s.value.height - x.value - c.space - l.value);
         c.getFunction({
           r: Ri.value,
           width1: s.value.width,
@@ -120,10 +120,10 @@ const Vi = (c, l) => {
                   g.direction === "right" && H(R, g);
                 }), R.lineTo(
                   E.value + k.value,
-                  e.value + U.value
+                  e.value + l.value
                 ), J.value.forEach((g) => {
                   g.direction === "bottom" && H(R, g);
-                }), R.lineTo(E.value, e.value + U.value), J.value.forEach((g) => {
+                }), R.lineTo(E.value, e.value + l.value), J.value.forEach((g) => {
                   g.direction === "left" && H(R, g);
                 }), R.lineTo(E.value, e.value), R.closePath(), R.stroke(), R.restore(), R.save(), R.fillStyle = "rgba(0,0,0,.65)", R.fill(), R.restore(), F.strokeStyle = "#F6F152", F.lineWidth = 3.5, F.shadowBlur = 5, F.shadowOffsetX = 0, F.shadowOffsetY = 0, F.shadowColor = "black", F.save(), F.beginPath(), F.moveTo(E.value, e.value), J.value.forEach((g) => {
                   g.direction === "top" && H(F, g);
@@ -131,10 +131,10 @@ const Vi = (c, l) => {
                   g.direction === "right" && H(F, g);
                 }), F.lineTo(
                   E.value + k.value,
-                  e.value + U.value
+                  e.value + l.value
                 ), J.value.forEach((g) => {
                   g.direction === "bottom" && H(F, g);
-                }), F.lineTo(E.value, e.value + U.value), J.value.forEach((g) => {
+                }), F.lineTo(E.value, e.value + l.value), J.value.forEach((g) => {
                   g.direction === "left" && H(F, g);
                 }), F.lineTo(E.value, e.value), F.closePath(), F.stroke(), F.stroke(), F.stroke(), F.clip(), F.drawImage(
                   D,
@@ -183,51 +183,51 @@ const Vi = (c, l) => {
         case "right":
           h = Y.much === "inside" ? -h : h, i.lineTo(
             E.value + k.value,
-            e.value + U.value / 2 - C
+            e.value + l.value / 2 - C
           ), i.arcTo(
             E.value + k.value + h,
-            e.value + U.value / 2 - C,
+            e.value + l.value / 2 - C,
             E.value + k.value + h,
-            e.value + U.value / 2,
+            e.value + l.value / 2,
             x.value
           ), i.arcTo(
             E.value + k.value + h,
-            e.value + U.value / 2 + C,
+            e.value + l.value / 2 + C,
             E.value + k.value,
-            e.value + U.value / 2 + C,
+            e.value + l.value / 2 + C,
             x.value
           );
           break;
         case "bottom":
           C = Y.much === "inside" ? -C : C, i.lineTo(
             E.value + k.value / 2 + h,
-            e.value + U.value
+            e.value + l.value
           ), i.arcTo(
             E.value + k.value / 2 + h,
-            e.value + U.value + C,
+            e.value + l.value + C,
             E.value + k.value / 2,
-            e.value + U.value + C,
+            e.value + l.value + C,
             x.value
           ), i.arcTo(
             E.value + k.value / 2 - h,
-            e.value + U.value + C,
+            e.value + l.value + C,
             E.value + k.value / 2 - h,
-            e.value + U.value,
+            e.value + l.value,
             x.value
           );
           break;
         case "left":
-          h = Y.much === "inside" ? h : -h, i.lineTo(E.value, e.value + U.value / 2 + C), i.arcTo(
+          h = Y.much === "inside" ? h : -h, i.lineTo(E.value, e.value + l.value / 2 + C), i.arcTo(
             E.value + h,
-            e.value + U.value / 2 + C,
+            e.value + l.value / 2 + C,
             E.value + h,
-            e.value + U.value / 2,
+            e.value + l.value / 2,
             x.value
           ), i.arcTo(
             E.value + h,
-            e.value + U.value / 2 - C,
+            e.value + l.value / 2 - C,
             E.value,
-            e.value + U.value / 2 - C,
+            e.value + l.value / 2 - C,
             x.value
           );
           break;
@@ -255,7 +255,7 @@ const Vi = (c, l) => {
         d.value = Math.round((d.value + 0.1) * 10) / 10;
       }, 100), setTimeout(() => {
         w.value = 2;
-      }, 50), t.value = i.pageX, li.value = i.offsetX);
+      }, 50), t.value = i.pageX, Ui.value = i.offsetX);
     }, Oi = (i) => {
       B.value === 1 && (i.pageX - t.value < 0 ? (m.value.style.left = "0px", G.value.style.left = L.value + "px") : i.pageX - t.value > 260 - 56 ? (m.value.style.left = "204px", G.value.style.left = $.value + "px") : (G.value.style.left = L.value + ($.value - L.value) * (i.pageX - t.value) / (260 - 56) + "px", m.value.style.left = i.pageX - t.value + "px"));
     }, Mi = () => {
@@ -319,7 +319,7 @@ const Vi = (c, l) => {
       moveBtnStatus: B,
       moveTxtStatus: w,
       percentage: X,
-      initPop: Ui,
+      initPop: li,
       testLost: Fi,
       testOne: G,
       dragBtn: m,
@@ -388,7 +388,7 @@ const Vi = (c, l) => {
   key: 3,
   class: "times-content"
 }, QI = /* @__PURE__ */ Q("div", { class: "source" }, null, -1), eI = { class: "error-msg" }, CI = { key: 0 };
-function YI(c, l, j, I, f, b) {
+function YI(c, U, j, I, f, b) {
   return a(), K("div", wi, [
     I.loadBtn && j.showBtn ? (a(), K("div", Li, [
       Hi,
@@ -397,7 +397,7 @@ function YI(c, l, j, I, f, b) {
     I.testBtn && !I.showPop && j.showBtn ? (a(), K("div", {
       key: 1,
       class: "test-btn",
-      onClick: l[0] || (l[0] = (...S) => I.initPop && I.initPop(...S))
+      onClick: U[0] || (U[0] = (...S) => I.initPop && I.initPop(...S))
     }, [
       Zi,
       Ei(" \u70B9\u51FB\u6309\u94AE\u8FDB\u884C\u9A8C\u8BC1 ")
@@ -409,8 +409,8 @@ function YI(c, l, j, I, f, b) {
     ])) : O("", !0),
     I.showPop ? (a(), K("div", {
       key: 4,
-      onMousemove: l[6] || (l[6] = (...S) => I.dragMove && I.dragMove(...S)),
-      onMouseup: l[7] || (l[7] = (...S) => I.dragUp && I.dragUp(...S)),
+      onMousemove: U[6] || (U[6] = (...S) => I.dragMove && I.dragMove(...S)),
+      onMouseup: U[7] || (U[7] = (...S) => I.dragUp && I.dragUp(...S)),
       class: y([
         "reg-pop",
         I.popAnimate,
@@ -457,7 +457,7 @@ function YI(c, l, j, I, f, b) {
               I.moveBtnStatus === 1 ? "drag" : I.moveBtnStatus === 2 ? "drag-end" : ""
             ]),
             ref: "dragBtn",
-            onMousedown: l[1] || (l[1] = (...S) => I.dragDown && I.dragDown(...S))
+            onMousedown: U[1] || (U[1] = (...S) => I.dragDown && I.dragDown(...S))
           }, null, 34),
           Q("span", {
             class: y(
@@ -468,11 +468,11 @@ function YI(c, l, j, I, f, b) {
         Q("div", fi, [
           Q("div", {
             class: "source close",
-            onClick: l[2] || (l[2] = (...S) => I.closePop && I.closePop(...S))
+            onClick: U[2] || (U[2] = (...S) => I.closePop && I.closePop(...S))
           }, _i),
           Q("div", {
             class: "source refresh",
-            onClick: l[3] || (l[3] = (...S) => I.drawImg && I.drawImg(...S))
+            onClick: U[3] || (U[3] = (...S) => I.drawImg && I.drawImg(...S))
           }, iI)
         ])
       ])) : O("", !0),
@@ -482,12 +482,12 @@ function YI(c, l, j, I, f, b) {
         Q("p", null, hi(I.errMsg), 1),
         Q("div", eI, [
           Q("span", {
-            onClick: l[4] || (l[4] = (...S) => I.doAgain && I.doAgain(...S))
+            onClick: U[4] || (U[4] = (...S) => I.doAgain && I.doAgain(...S))
           }, "\u8BF7\u70B9\u51FB\u6B64\u5904\u91CD\u8BD5"),
           I.errMsg !== "\u5C1D\u8BD5\u8FC7\u591A" ? (a(), K("em", CI, " or ")) : O("", !0),
           I.errMsg !== "\u5C1D\u8BD5\u8FC7\u591A" ? (a(), K("span", {
             key: 1,
-            onClick: l[5] || (l[5] = (...S) => I.elseClose && I.elseClose(...S))
+            onClick: U[5] || (U[5] = (...S) => I.elseClose && I.elseClose(...S))
           }, "\u5173\u95ED\u9A8C\u8BC1")) : O("", !0)
         ])
       ])) : O("", !0)
@@ -496,8 +496,8 @@ function YI(c, l, j, I, f, b) {
 }
 const RI = /* @__PURE__ */ Vi(Bi, [["render", YI]]), FI = [RI], kI = {
   install(c) {
-    FI.forEach((l) => {
-      c.component(l.name, l);
+    FI.forEach((U) => {
+      c.component(U.name, U);
     });
   }
 };

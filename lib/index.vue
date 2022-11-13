@@ -4,7 +4,7 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2022-11-11 16:47:06
+ * @LastEditTime: 2022-11-13 09:39:50
 */
 <template>
   <div class="vue-puzzle-slider-plus">
@@ -189,7 +189,6 @@ export default {
     },
   },
   setup(props, { attrs, slots, emit, expose }) {
-    console.log(1);
     // 初始化按钮
     let loadBtn = ref(true);
     onMounted(() => {
