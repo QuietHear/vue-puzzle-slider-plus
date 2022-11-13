@@ -6,10 +6,10 @@
 	npm i vue-puzzle-slider-plus
 
 ## 使用
-	import vuePermissionBreadsPlus from "vue-puzzle-slider-plus";
+	import vuePuzzleSliderPlus from "vue-puzzle-slider-plus";
 	import "vue-puzzle-slider-plus/index.css";
 	
-	app.use(vuePermissionBreadsPlus);
+	app.use(vuePuzzleSliderPlus);
 
 
 ## 1. 参数
