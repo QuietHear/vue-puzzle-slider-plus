@@ -1,12 +1,46 @@
-import { ref as o, onMounted as Di, openBlock as a, createElementBlock as K, createTextVNode as Ei, createCommentVNode as O, normalizeClass as y, createElementVNode as Q, toDisplayString as hi, nextTick as gi, createStaticVNode as ji } from "vue";
-const Vi = (c, U) => {
-  const j = c.__vccOpts || c;
-  for (const [I, f] of U)
-    j[I] = f;
-  return j;
-}, Bi = {
-  name: "vuePuzzleSliderPlus",
-  emits: ["change"],
+import { ref as I, onMounted as ji, openBlock as S, createElementBlock as J, unref as h, createTextVNode as oi, createCommentVNode as G, normalizeClass as y, createElementVNode as e, toDisplayString as hi, nextTick as gi, createStaticVNode as Vi } from "vue";
+const Bi = { class: "vue-puzzle-slider-plus" }, wi = {
+  key: 0,
+  class: "load-btn"
+}, Li = /* @__PURE__ */ e("div", { class: "ding" }, [
+  /* @__PURE__ */ e("div"),
+  /* @__PURE__ */ e("div"),
+  /* @__PURE__ */ e("div")
+], -1), Hi = /* @__PURE__ */ e("div", { class: "ding" }, [
+  /* @__PURE__ */ e("div", { class: "out" }),
+  /* @__PURE__ */ e("div", { class: "in" })
+], -1), Zi = {
+  key: 2,
+  class: "testing-btn"
+}, pi = {
+  key: 3,
+  class: "success-btn"
+}, zi = /* @__PURE__ */ e("span", { class: "source" }, null, -1), Ni = {
+  key: 0,
+  class: "load-content"
+}, mi = /* @__PURE__ */ e("div", null, null, -1), ui = /* @__PURE__ */ e("p", null, "\u667A\u80FD\u9A8C\u8BC1\u68C0\u6D4B\u4E2D", -1), yi = [
+  mi,
+  ui
+], qi = {
+  key: 1,
+  class: "test-content"
+}, di = { class: "img-top" }, Ti = /* @__PURE__ */ e("div", { class: "bg" }, [
+  /* @__PURE__ */ e("div", { class: "source nothing" }),
+  /* @__PURE__ */ e("p", null, "\u52A0\u8F7D\u4E2D...")
+], -1), Wi = { key: 0 }, Pi = { key: 1 }, ti = { key: 2 }, ni = { class: "btn-middle source" }, Xi = /* @__PURE__ */ e("div", { class: "msg" }, "\u5173\u95ED\u9A8C\u8BC1", -1), ri = [
+  Xi
+], Ai = /* @__PURE__ */ e("div", { class: "msg" }, "\u5237\u65B0\u9A8C\u8BC1", -1), vi = [
+  Ai
+], fi = {
+  key: 2,
+  class: "success-content"
+}, bi = /* @__PURE__ */ Vi('<div class="container"><div class="out"><div class="pie"></div><div class="filter"></div><div class="mask"></div></div><div class="in"><div class="source"></div></div></div><p>\u901A\u8FC7\u9A8C\u8BC1</p>', 2), _i = [
+  bi
+], $i = {
+  key: 3,
+  class: "times-content"
+}, iI = /* @__PURE__ */ e("div", { class: "source" }, null, -1), II = { class: "error-msg" }, EI = { key: 0 }, oI = {
+  __name: "index",
   props: {
     showBtn: {
       type: Boolean,
@@ -40,468 +74,395 @@ const Vi = (c, U) => {
       required: !0
     }
   },
-  setup(c, { attrs: U, slots: j, emit: I, expose: f }) {
-    let b = o(!0);
-    Di(() => {
+  emits: ["change"],
+  setup(H, { expose: A, emit: v }) {
+    const x = H;
+    let Qi = I(!0);
+    ji(() => {
       setTimeout(() => {
-        b.value = !1, S.value = !0;
+        Qi.value = !1, f.value = !0;
       }, 1500);
     });
-    let S = o(!1), Qi = o(!1), z = o(!1), q = o(!1), V = o(""), _ = o(!1), M = o(!1), Z = o(!1), ei = o(!1), p = o(0), d = o(0);
-    const Ci = o(6);
-    let T = o(null), W = o(""), n = o(!1), N = o(0), P = o(!1), B = o(0), w = o(0), t = o(0), Ui = o(0), X = o(0);
-    const li = () => {
-      window.addEventListener("click", r, !1);
-    }, Si = (i, Y) => {
-      let h = i.matches || i.webkitMatchesSelector || i.mozMatchesSelector || i.msMatchesSelector;
-      for (; i && !h.call(i, Y); )
+    let f = I(!1), ei = I(!1), V = I(!1), q = I(!1), O = I(""), b = I(!1), K = I(!1), B = I(!1), _ = I(!1), p = I(0), d = I(0);
+    const Yi = I(6);
+    let T = I(null), Z = I(""), W = I(!1), z = I(0), N = I(!1), D = I(0), j = I(0), P = I(0), li = I(0), t = I(0);
+    const Ci = () => {
+      window.addEventListener("click", n, !1);
+    }, ci = (i, E) => {
+      let Q = i.matches || i.webkitMatchesSelector || i.mozMatchesSelector || i.msMatchesSelector;
+      for (; i && !Q.call(i, E); )
         i = i.parentElement;
       return i;
-    }, r = (i) => {
-      Si(i.target, ".reg-pop") === null && V.value !== "success" && (z.value ? ki() : (z.value = !0, _.value = !0, M.value = !1, p.value = 0, setTimeout(() => {
-        _.value = !1, M.value = !0, gi(() => {
-          oi();
+    }, n = (i) => {
+      ci(i.target, ".reg-pop") === null && O.value !== "success" && (V.value ? Ui() : (V.value = !0, b.value = !0, K.value = !1, p.value = 0, setTimeout(() => {
+        b.value = !1, K.value = !0, gi(() => {
+          Ei();
         });
       }, 1e3)));
-    }, k = o(50), l = o(50);
-    let J = o([]), L = o(0), $ = o(0), E = o(0);
-    const A = o(0), v = o(0), e = o(0), ii = o(0), Ii = o(0);
-    let x = o(0);
-    const Yi = o(7), Ri = o(12), Fi = o(null), G = o(null), m = o(null), s = o(null), oi = () => {
-      if (p.value += 1, p.value > Ci.value)
-        M.value = !1, W.value = "\u5C1D\u8BD5\u8FC7\u591A", Z.value = !0;
+    }, k = I(50), g = I(50);
+    let l = I([]), w = I(0), $ = I(0), o = I(0);
+    const X = I(0), r = I(0), Y = I(0), ii = I(0), Ii = I(0);
+    let c = I(0);
+    const Ri = I(7), Fi = I(12), ki = I(null), a = I(null), m = I(null), s = I(null), Ei = async () => {
+      if (p.value += 1, p.value > Yi.value)
+        K.value = !1, Z.value = "\u5C1D\u8BD5\u8FC7\u591A", B.value = !0;
       else {
-        n.value = !0, J.value = [...ai()], x.value = Math.floor(
-          Math.random() * (Ri.value - Yi.value + 1) + Yi.value
-        ), A.value = c.space + k.value / 2, v.value = s.value.width - c.space - k.value, ii.value = c.space, Ii.value = s.value.height - c.space - l.value;
-        for (let i = 0; i < J.value.length; i++)
-          J.value[i].direction === "left" && J.value[i].much === "outside" ? A.value = c.space + x.value + k.value / 2 : J.value[i].direction === "right" && J.value[i].much === "outside" ? v.value = s.value.width - x.value - c.space - k.value : J.value[i].direction === "top" && J.value[i].much === "outside" ? ii.value = c.space + x.value : J.value[i].direction === "bottom" && J.value[i].much === "outside" && (Ii.value = s.value.height - x.value - c.space - l.value);
-        c.getFunction({
-          r: Ri.value,
+        W.value = !0, l.value = [...ai()], c.value = Math.floor(
+          Math.random() * (Fi.value - Ri.value + 1) + Ri.value
+        ), X.value = x.space + k.value / 2, r.value = s.value.width - x.space - k.value, ii.value = x.space, Ii.value = s.value.height - x.space - g.value;
+        for (let E = 0; E < l.value.length; E++)
+          l.value[E].direction === "left" && l.value[E].much === "outside" ? X.value = x.space + c.value + k.value / 2 : l.value[E].direction === "right" && l.value[E].much === "outside" ? r.value = s.value.width - c.value - x.space - k.value : l.value[E].direction === "top" && l.value[E].much === "outside" ? ii.value = x.space + c.value : l.value[E].direction === "bottom" && l.value[E].much === "outside" && (Ii.value = s.value.height - c.value - x.space - g.value);
+        const i = await x.getFunction({
+          r: Fi.value,
           width1: s.value.width,
-          width2: v.value,
-          width3: A.value,
+          width2: r.value,
+          width3: X.value,
           width4: s.value.width - 20,
           height1: Ii.value,
           height2: s.value.height,
           height3: s.value.height - 10,
           height4: ii.value
-        }).then((i) => {
-          if (i.code === 200)
-            setTimeout(() => {
-              n.value = !1;
-              let Y = s.value, h = Fi.value, C = G.value, u = Y.getContext("2d"), R = h.getContext("2d"), F = C.getContext("2d");
-              E.value = Ji(i.data.width), e.value = i.data.y, L.value = -E.value + A.value - k.value / 2, $.value = v.value - E.value, C.style.left = L.value + "px", u.clearRect(0, 0, Y.width, Y.height), R.clearRect(0, 0, h.width, h.height), F.clearRect(0, 0, C.width, C.height);
-              let D = xi();
-              D.onload = () => {
-                u.drawImage(
-                  D,
-                  0,
-                  0,
-                  D.width,
-                  D.height,
-                  0,
-                  0,
-                  Y.width,
-                  Y.height
-                ), R.save(), R.drawImage(
-                  D,
-                  0,
-                  0,
-                  D.width,
-                  D.height,
-                  0,
-                  0,
-                  h.width,
-                  h.height
-                ), R.strokeStyle = "rgba(255,255,255,.4)", R.lineWidth = 1, R.beginPath(), R.moveTo(E.value, e.value), J.value.forEach((g) => {
-                  g.direction === "top" && H(R, g);
-                }), R.lineTo(E.value + k.value, e.value), J.value.forEach((g) => {
-                  g.direction === "right" && H(R, g);
-                }), R.lineTo(
-                  E.value + k.value,
-                  e.value + l.value
-                ), J.value.forEach((g) => {
-                  g.direction === "bottom" && H(R, g);
-                }), R.lineTo(E.value, e.value + l.value), J.value.forEach((g) => {
-                  g.direction === "left" && H(R, g);
-                }), R.lineTo(E.value, e.value), R.closePath(), R.stroke(), R.restore(), R.save(), R.fillStyle = "rgba(0,0,0,.65)", R.fill(), R.restore(), F.strokeStyle = "#F6F152", F.lineWidth = 3.5, F.shadowBlur = 5, F.shadowOffsetX = 0, F.shadowOffsetY = 0, F.shadowColor = "black", F.save(), F.beginPath(), F.moveTo(E.value, e.value), J.value.forEach((g) => {
-                  g.direction === "top" && H(F, g);
-                }), F.lineTo(E.value + k.value, e.value), J.value.forEach((g) => {
-                  g.direction === "right" && H(F, g);
-                }), F.lineTo(
-                  E.value + k.value,
-                  e.value + l.value
-                ), J.value.forEach((g) => {
-                  g.direction === "bottom" && H(F, g);
-                }), F.lineTo(E.value, e.value + l.value), J.value.forEach((g) => {
-                  g.direction === "left" && H(F, g);
-                }), F.lineTo(E.value, e.value), F.closePath(), F.stroke(), F.stroke(), F.stroke(), F.clip(), F.drawImage(
-                  D,
-                  0,
-                  0,
-                  D.width,
-                  D.height,
-                  0,
-                  0,
-                  C.width,
-                  C.height
-                ), F.restore();
-              };
-            }, 500);
-          else
-            try {
-            } finally {
-              M.value = !1, W.value = "\u7F51\u7EDC\u8D85\u65F6", Z.value = !0;
-            }
         });
+        if (i.code === 200)
+          setTimeout(() => {
+            W.value = !1;
+            let E = s.value, Q = ki.value, C = a.value, u = E.getContext("2d"), R = Q.getContext("2d"), F = C.getContext("2d");
+            o.value = Ji(i.data.width), Y.value = i.data.y, w.value = -o.value + X.value - k.value / 2, $.value = r.value - o.value, C.style.left = w.value + "px", u.clearRect(0, 0, E.width, E.height), R.clearRect(0, 0, Q.width, Q.height), F.clearRect(0, 0, C.width, C.height);
+            let M = xi();
+            M.onload = () => {
+              u.drawImage(
+                M,
+                0,
+                0,
+                M.width,
+                M.height,
+                0,
+                0,
+                E.width,
+                E.height
+              ), R.save(), R.drawImage(
+                M,
+                0,
+                0,
+                M.width,
+                M.height,
+                0,
+                0,
+                Q.width,
+                Q.height
+              ), R.strokeStyle = "rgba(255,255,255,.4)", R.lineWidth = 1, R.beginPath(), R.moveTo(o.value, Y.value), l.value.forEach((U) => {
+                U.direction === "top" && L(R, U);
+              }), R.lineTo(o.value + k.value, Y.value), l.value.forEach((U) => {
+                U.direction === "right" && L(R, U);
+              }), R.lineTo(
+                o.value + k.value,
+                Y.value + g.value
+              ), l.value.forEach((U) => {
+                U.direction === "bottom" && L(R, U);
+              }), R.lineTo(o.value, Y.value + g.value), l.value.forEach((U) => {
+                U.direction === "left" && L(R, U);
+              }), R.lineTo(o.value, Y.value), R.closePath(), R.stroke(), R.restore(), R.save(), R.fillStyle = "rgba(0,0,0,.65)", R.fill(), R.restore(), F.strokeStyle = "#F6F152", F.lineWidth = 3.5, F.shadowBlur = 5, F.shadowOffsetX = 0, F.shadowOffsetY = 0, F.shadowColor = "black", F.save(), F.beginPath(), F.moveTo(o.value, Y.value), l.value.forEach((U) => {
+                U.direction === "top" && L(F, U);
+              }), F.lineTo(o.value + k.value, Y.value), l.value.forEach((U) => {
+                U.direction === "right" && L(F, U);
+              }), F.lineTo(
+                o.value + k.value,
+                Y.value + g.value
+              ), l.value.forEach((U) => {
+                U.direction === "bottom" && L(F, U);
+              }), F.lineTo(o.value, Y.value + g.value), l.value.forEach((U) => {
+                U.direction === "left" && L(F, U);
+              }), F.lineTo(o.value, Y.value), F.closePath(), F.stroke(), F.stroke(), F.stroke(), F.clip(), F.drawImage(
+                M,
+                0,
+                0,
+                M.width,
+                M.height,
+                0,
+                0,
+                C.width,
+                C.height
+              ), F.restore();
+            };
+          }, 500);
+        else
+          try {
+          } finally {
+            K.value = !1, Z.value = "\u7F51\u7EDC\u8D85\u65F6", B.value = !0;
+          }
       }
-    }, ci = (i) => {
-      let Y = (i + 4) * (i - 4);
-      return Y = Y.toString(4), Y = window.btoa(Y), Y;
+    }, Si = (i) => {
+      let E = (i + 4) * (i - 4);
+      return E = E.toString(4), E = window.btoa(E), E;
     }, Ji = (i) => {
-      let Y = window.atob(i);
-      return Y = parseInt(Y, 8), Y = Math.sqrt(Y + 64), Y;
-    }, H = (i, Y) => {
-      let h = x.value, C = x.value;
-      switch (Y.direction) {
+      let E = window.atob(i);
+      return E = parseInt(E, 8), E = Math.sqrt(E + 64), E;
+    }, L = (i, E) => {
+      let Q = c.value, C = c.value;
+      switch (E.direction) {
         case "top":
-          C = Y.much === "inside" ? C : -C, i.lineTo(E.value + k.value / 2 - h, e.value), i.arcTo(
-            E.value + k.value / 2 - h,
-            e.value + C,
-            E.value + k.value / 2,
-            e.value + C,
-            x.value
+          C = E.much === "inside" ? C : -C, i.lineTo(o.value + k.value / 2 - Q, Y.value), i.arcTo(
+            o.value + k.value / 2 - Q,
+            Y.value + C,
+            o.value + k.value / 2,
+            Y.value + C,
+            c.value
           ), i.arcTo(
-            E.value + k.value / 2 + h,
-            e.value + C,
-            E.value + k.value / 2 + h,
-            e.value,
-            x.value
+            o.value + k.value / 2 + Q,
+            Y.value + C,
+            o.value + k.value / 2 + Q,
+            Y.value,
+            c.value
           );
           break;
         case "right":
-          h = Y.much === "inside" ? -h : h, i.lineTo(
-            E.value + k.value,
-            e.value + l.value / 2 - C
+          Q = E.much === "inside" ? -Q : Q, i.lineTo(
+            o.value + k.value,
+            Y.value + g.value / 2 - C
           ), i.arcTo(
-            E.value + k.value + h,
-            e.value + l.value / 2 - C,
-            E.value + k.value + h,
-            e.value + l.value / 2,
-            x.value
+            o.value + k.value + Q,
+            Y.value + g.value / 2 - C,
+            o.value + k.value + Q,
+            Y.value + g.value / 2,
+            c.value
           ), i.arcTo(
-            E.value + k.value + h,
-            e.value + l.value / 2 + C,
-            E.value + k.value,
-            e.value + l.value / 2 + C,
-            x.value
+            o.value + k.value + Q,
+            Y.value + g.value / 2 + C,
+            o.value + k.value,
+            Y.value + g.value / 2 + C,
+            c.value
           );
           break;
         case "bottom":
-          C = Y.much === "inside" ? -C : C, i.lineTo(
-            E.value + k.value / 2 + h,
-            e.value + l.value
+          C = E.much === "inside" ? -C : C, i.lineTo(
+            o.value + k.value / 2 + Q,
+            Y.value + g.value
           ), i.arcTo(
-            E.value + k.value / 2 + h,
-            e.value + l.value + C,
-            E.value + k.value / 2,
-            e.value + l.value + C,
-            x.value
+            o.value + k.value / 2 + Q,
+            Y.value + g.value + C,
+            o.value + k.value / 2,
+            Y.value + g.value + C,
+            c.value
           ), i.arcTo(
-            E.value + k.value / 2 - h,
-            e.value + l.value + C,
-            E.value + k.value / 2 - h,
-            e.value + l.value,
-            x.value
+            o.value + k.value / 2 - Q,
+            Y.value + g.value + C,
+            o.value + k.value / 2 - Q,
+            Y.value + g.value,
+            c.value
           );
           break;
         case "left":
-          h = Y.much === "inside" ? h : -h, i.lineTo(E.value, e.value + l.value / 2 + C), i.arcTo(
-            E.value + h,
-            e.value + l.value / 2 + C,
-            E.value + h,
-            e.value + l.value / 2,
-            x.value
+          Q = E.much === "inside" ? Q : -Q, i.lineTo(o.value, Y.value + g.value / 2 + C), i.arcTo(
+            o.value + Q,
+            Y.value + g.value / 2 + C,
+            o.value + Q,
+            Y.value + g.value / 2,
+            c.value
           ), i.arcTo(
-            E.value + h,
-            e.value + l.value / 2 - C,
-            E.value,
-            e.value + l.value / 2 - C,
-            x.value
+            o.value + Q,
+            Y.value + g.value / 2 - C,
+            o.value,
+            Y.value + g.value / 2 - C,
+            c.value
           );
           break;
       }
     }, xi = () => {
       let i = new Image();
-      return i.src = c.imgList[Math.floor(Math.random() * c.imgList.length)], i;
+      return i.src = x.imgList[Math.floor(Math.random() * x.imgList.length)], i;
     }, ai = () => {
-      const i = ["top", "right", "bottom", "left"], Y = ["outside", "inside"];
-      let h = [...i], C = [];
+      const i = ["top", "right", "bottom", "left"], E = ["outside", "inside"];
+      let Q = [...i], C = [];
       for (let u = 0; u < 2; u++) {
-        let R = Math.floor(Math.random() * h.length);
+        let R = Math.floor(Math.random() * Q.length);
         C[u] = {
-          direction: h[R],
-          much: Y[Math.floor(Math.random() * Y.length)]
-        }, h.splice(R, 1);
+          direction: Q[R],
+          much: E[Math.floor(Math.random() * E.length)]
+        }, Q.splice(R, 1);
       }
       return C;
     }, Ki = () => {
-      p.value = 0, Z.value = !1, M.value = !0, gi(() => {
-        oi();
+      p.value = 0, B.value = !1, K.value = !0, gi(() => {
+        Ei();
       });
     }, Gi = (i) => {
-      w.value === 0 && n.value === !1 && (B.value = 1, w.value = 1, d.value = 0, T.value = setInterval(() => {
+      j.value === 0 && W.value === !1 && (D.value = 1, j.value = 1, d.value = 0, T.value = setInterval(() => {
         d.value = Math.round((d.value + 0.1) * 10) / 10;
       }, 100), setTimeout(() => {
-        w.value = 2;
-      }, 50), t.value = i.pageX, Ui.value = i.offsetX);
+        j.value = 2;
+      }, 50), P.value = i.pageX, li.value = i.offsetX);
     }, Oi = (i) => {
-      B.value === 1 && (i.pageX - t.value < 0 ? (m.value.style.left = "0px", G.value.style.left = L.value + "px") : i.pageX - t.value > 260 - 56 ? (m.value.style.left = "204px", G.value.style.left = $.value + "px") : (G.value.style.left = L.value + ($.value - L.value) * (i.pageX - t.value) / (260 - 56) + "px", m.value.style.left = i.pageX - t.value + "px"));
-    }, Mi = () => {
-      B.value === 1 && (clearInterval(T.value), T.value = null, B.value = 2, N.value = 1, w.value = 1, si());
+      D.value === 1 && (i.pageX - P.value < 0 ? (m.value.style.left = "0px", a.value.style.left = w.value + "px") : i.pageX - P.value > 260 - 56 ? (m.value.style.left = "204px", a.value.style.left = $.value + "px") : (a.value.style.left = w.value + ($.value - w.value) * (i.pageX - P.value) / (260 - 56) + "px", m.value.style.left = i.pageX - P.value + "px"));
     }, si = () => {
-      c.setFunction({
-        x: ci(
-          parseInt(G.value.style.left) - L.value + x.value
+      D.value === 1 && (clearInterval(T.value), T.value = null, D.value = 2, z.value = 1, j.value = 1, Mi());
+    }, Mi = async () => {
+      const i = await x.setFunction({
+        x: Si(
+          parseInt(a.value.style.left) - w.value + c.value
         ),
         time: d.value
-      }).then((i) => {
-        if (X.value = i.data.percentage, i.code === 200)
-          X.value > 0 ? (P.value = !0, V.value = "success", setTimeout(() => {
-            N.value = 0, M.value = !1, ei.value = !0, setTimeout(() => {
-              window.removeEventListener("click", r, !1), S.value = !1, q.value = !0, setTimeout(() => {
-                q.value = !1, z.value = !1, Qi.value = !0, I("change", !0);
-              }, 1e3);
-            }, 1100);
-          }, 1e3)) : (P.value = !1, V.value = "wrong", setTimeout(() => {
-            G.value.style.opacity = 0, setTimeout(() => {
-              V.value = "", N.value = 0, m.value.style.left = "0px", G.value.style.left = L.value + "px", G.value.style.opacity = 1, setTimeout(() => {
-                w.value = 0, B.value = 0;
-              }, 500);
-            }, 500);
-          }, 1e3));
-        else if (i.code === 123)
-          p.value += 1, p.value > Ci.value ? (M.value = !1, W.value = "\u5C1D\u8BD5\u8FC7\u591A", Z.value = !0) : (X.value = 1, P.value = !1, V.value = "wrong", setTimeout(() => {
-            G.value.style.opacity = 0, setTimeout(() => {
-              V.value = "", N.value = 0, m.value.style.left = "0px", G.value.style.left = L.value + "px", G.value.style.opacity = 1, setTimeout(() => {
-                w.value = 0, B.value = 0;
-              }, 500);
-            }, 500);
-          }, 1e3));
-        else
-          try {
-          } finally {
-            M.value = !1, W.value = "\u7F51\u7EDC\u8D85\u65F6", Z.value = !0;
-          }
       });
-    }, ki = () => {
-      M.value === !0 && V.value !== "success" && (window.removeEventListener("click", r, !1), q.value = !0, clearInterval(T.value), T.value = null, setTimeout(() => {
-        N.value = 0, w.value = 0, B.value = 0, q.value = !1, z.value = !1, I("change", !1);
+      if (t.value = i.data.percentage, i.code === 200)
+        t.value > 0 ? (N.value = !0, O.value = "success", setTimeout(() => {
+          z.value = 0, K.value = !1, _.value = !0, setTimeout(() => {
+            window.removeEventListener("click", n, !1), f.value = !1, q.value = !0, setTimeout(() => {
+              q.value = !1, V.value = !1, ei.value = !0, v("change", !0);
+            }, 1e3);
+          }, 1100);
+        }, 1e3)) : (N.value = !1, O.value = "wrong", setTimeout(() => {
+          a.value.style.opacity = 0, setTimeout(() => {
+            O.value = "", z.value = 0, m.value.style.left = "0px", a.value.style.left = w.value + "px", a.value.style.opacity = 1, setTimeout(() => {
+              j.value = 0, D.value = 0;
+            }, 500);
+          }, 500);
+        }, 1e3));
+      else if (i.code === 123)
+        p.value += 1, p.value > Yi.value ? (K.value = !1, Z.value = "\u5C1D\u8BD5\u8FC7\u591A", B.value = !0) : (t.value = 1, N.value = !1, O.value = "wrong", setTimeout(() => {
+          a.value.style.opacity = 0, setTimeout(() => {
+            O.value = "", z.value = 0, m.value.style.left = "0px", a.value.style.left = w.value + "px", a.value.style.opacity = 1, setTimeout(() => {
+              j.value = 0, D.value = 0;
+            }, 500);
+          }, 500);
+        }, 1e3));
+      else
+        try {
+        } finally {
+          K.value = !1, Z.value = "\u7F51\u7EDC\u8D85\u65F6", B.value = !0;
+        }
+    }, Ui = () => {
+      K.value === !0 && O.value !== "success" && (window.removeEventListener("click", n, !1), q.value = !0, clearInterval(T.value), T.value = null, setTimeout(() => {
+        z.value = 0, j.value = 0, D.value = 0, q.value = !1, V.value = !1, v("change", !1);
       }, 1e3));
+    }, Di = () => {
+      window.removeEventListener("click", n, !1), V.value = !1, B.value = !1, v("change", !1, "");
     };
-    return {
-      loadBtn: b,
-      testBtn: S,
-      successBtn: Qi,
-      showPop: z,
-      ending: q,
-      popAnimate: V,
-      loadContent: _,
-      testContent: M,
-      timesContent: Z,
-      successContent: ei,
-      time: d,
-      errMsg: W,
-      refresh: n,
-      testStatus: N,
-      testSuccess: P,
-      moveBtnStatus: B,
-      moveTxtStatus: w,
-      percentage: X,
-      initPop: li,
-      testLost: Fi,
-      testOne: G,
-      dragBtn: m,
-      right: s,
-      drawImg: oi,
-      doAgain: Ki,
-      dragDown: Gi,
-      dragMove: Oi,
-      dragUp: Mi,
-      closePop: ki,
-      elseClose: () => {
-        window.removeEventListener("click", r, !1), z.value = !1, Z.value = !1, I("change", !1, "");
-      }
-    };
+    return A({ initPop: Ci }), (i, E) => (S(), J("div", Bi, [
+      h(Qi) && H.showBtn ? (S(), J("div", wi, [
+        Li,
+        oi(" \u52A0\u8F7D\u4E2D ")
+      ])) : G("", !0),
+      h(f) && !h(V) && H.showBtn ? (S(), J("div", {
+        key: 1,
+        class: "test-btn",
+        onClick: Ci
+      }, [
+        Hi,
+        oi(" \u70B9\u51FB\u6309\u94AE\u8FDB\u884C\u9A8C\u8BC1 ")
+      ])) : G("", !0),
+      h(V) && H.showBtn ? (S(), J("div", Zi, "\u9A8C\u8BC1\u4E2D")) : G("", !0),
+      h(ei) && H.showBtn ? (S(), J("div", pi, [
+        zi,
+        oi("\u9A8C\u8BC1\u6210\u529F ")
+      ])) : G("", !0),
+      h(V) ? (S(), J("div", {
+        key: 4,
+        onMousemove: Oi,
+        onMouseup: si,
+        class: y([
+          "reg-pop",
+          h(O),
+          h(K) === !0 ? "test-pop" : "",
+          h(q) === !0 ? "ending" : "",
+          h(B) === !0 ? "times-pop" : "",
+          h(_) === !0 ? "success-pop" : ""
+        ])
+      }, [
+        h(b) ? (S(), J("div", Ni, yi)) : G("", !0),
+        h(K) ? (S(), J("div", qi, [
+          e("div", di, [
+            Ti,
+            e("div", {
+              class: y(["test", [
+                h(W) === !0 ? "hide" : "",
+                h(O) === "success" ? "none" : ""
+              ]])
+            }, [
+              e("canvas", {
+                ref_key: "testLost",
+                ref: ki,
+                width: "260",
+                height: "156"
+              }, null, 512),
+              e("canvas", {
+                ref_key: "testOne",
+                ref: a,
+                width: "260",
+                height: "156"
+              }, null, 512)
+            ], 2),
+            e("div", {
+              class: y(["right", [
+                h(W) === !0 ? "hide" : "",
+                h(O) === "success" ? "bright" : "none"
+              ]])
+            }, [
+              e("canvas", {
+                ref_key: "right",
+                ref: s,
+                width: "260",
+                height: "156"
+              }, null, 512)
+            ], 2),
+            e("div", {
+              class: y(["result-msg", [
+                h(z) !== 0 ? "show" : "",
+                h(N) === !0 ? "success" : ""
+              ]])
+            }, [
+              h(N) === !0 ? (S(), J("span", Wi, hi(h(d)) + " \u79D2\u7684\u901F\u5EA6\u8D85\u8FC7 " + hi(h(t)) + "% \u7684\u7528\u6237", 1)) : h(N) === !1 && h(t) < 0 ? (S(), J("span", Pi, "\u52A8\u4F5C\u592A\u6162\uFF0C\u65B9\u5757\u88AB\u602A\u517D\u5403\u6389\u4E86")) : (S(), J("span", ti, "\u62D6\u52A8\u6ED1\u5757\u5C06\u60AC\u6D6E\u56FE\u50CF\u6B63\u786E\u62FC\u5408"))
+            ], 2)
+          ]),
+          e("div", ni, [
+            e("div", {
+              class: y([
+                "source drag-btn",
+                h(D) === 1 ? "drag" : h(D) === 2 ? "drag-end" : ""
+              ]),
+              ref_key: "dragBtn",
+              ref: m,
+              onMousedown: Gi
+            }, null, 34),
+            e("span", {
+              class: y(
+                h(j) === 1 ? "hide" : h(j) === 2 ? "none" : ""
+              )
+            }, "\u62D6\u52A8\u5DE6\u8FB9\u6ED1\u5757\u5B8C\u6210\u4E0A\u65B9\u62FC\u56FE", 2)
+          ]),
+          e("div", { class: "operate-bottom" }, [
+            e("div", {
+              class: "source close",
+              onClick: Ui
+            }, ri),
+            e("div", {
+              class: "source refresh",
+              onClick: Ei
+            }, vi)
+          ])
+        ])) : G("", !0),
+        h(_) ? (S(), J("div", fi, _i)) : G("", !0),
+        h(B) ? (S(), J("div", $i, [
+          iI,
+          e("p", null, hi(h(Z)), 1),
+          e("div", II, [
+            e("span", { onClick: Ki }, "\u8BF7\u70B9\u51FB\u6B64\u5904\u91CD\u8BD5"),
+            h(Z) !== "\u5C1D\u8BD5\u8FC7\u591A" ? (S(), J("em", EI, " or ")) : G("", !0),
+            h(Z) !== "\u5C1D\u8BD5\u8FC7\u591A" ? (S(), J("span", {
+              key: 1,
+              onClick: Di
+            }, "\u5173\u95ED\u9A8C\u8BC1")) : G("", !0)
+          ])
+        ])) : G("", !0)
+      ], 34)) : G("", !0)
+    ]));
   }
-}, wi = { class: "vue-puzzle-slider-plus" }, Li = {
-  key: 0,
-  class: "load-btn"
-}, Hi = /* @__PURE__ */ Q("div", { class: "ding" }, [
-  /* @__PURE__ */ Q("div"),
-  /* @__PURE__ */ Q("div"),
-  /* @__PURE__ */ Q("div")
-], -1), Zi = /* @__PURE__ */ Q("div", { class: "ding" }, [
-  /* @__PURE__ */ Q("div", { class: "out" }),
-  /* @__PURE__ */ Q("div", { class: "in" })
-], -1), zi = {
-  key: 2,
-  class: "testing-btn"
-}, pi = {
-  key: 3,
-  class: "success-btn"
-}, Ni = /* @__PURE__ */ Q("span", { class: "source" }, null, -1), mi = {
-  key: 0,
-  class: "load-content"
-}, ui = /* @__PURE__ */ Q("div", null, null, -1), yi = /* @__PURE__ */ Q("p", null, "\u667A\u80FD\u9A8C\u8BC1\u68C0\u6D4B\u4E2D", -1), qi = [
-  ui,
-  yi
-], di = {
-  key: 1,
-  class: "test-content"
-}, Ti = { class: "img-top" }, Wi = /* @__PURE__ */ Q("div", { class: "bg" }, [
-  /* @__PURE__ */ Q("div", { class: "source nothing" }),
-  /* @__PURE__ */ Q("p", null, "\u52A0\u8F7D\u4E2D...")
-], -1), ti = {
-  ref: "testLost",
-  width: "260",
-  height: "156"
-}, ni = {
-  ref: "testOne",
-  width: "260",
-  height: "156"
-}, Pi = {
-  ref: "right",
-  width: "260",
-  height: "156"
-}, Xi = { key: 0 }, ri = { key: 1 }, Ai = { key: 2 }, vi = { class: "btn-middle source" }, fi = { class: "operate-bottom" }, bi = /* @__PURE__ */ Q("div", { class: "msg" }, "\u5173\u95ED\u9A8C\u8BC1", -1), _i = [
-  bi
-], $i = /* @__PURE__ */ Q("div", { class: "msg" }, "\u5237\u65B0\u9A8C\u8BC1", -1), iI = [
-  $i
-], II = {
-  key: 2,
-  class: "success-content"
-}, oI = /* @__PURE__ */ ji('<div class="container"><div class="out"><div class="pie"></div><div class="filter"></div><div class="mask"></div></div><div class="in"><div class="source"></div></div></div><p>\u901A\u8FC7\u9A8C\u8BC1</p>', 2), EI = [
-  oI
-], hI = {
-  key: 3,
-  class: "times-content"
-}, QI = /* @__PURE__ */ Q("div", { class: "source" }, null, -1), eI = { class: "error-msg" }, CI = { key: 0 };
-function YI(c, U, j, I, f, b) {
-  return a(), K("div", wi, [
-    I.loadBtn && j.showBtn ? (a(), K("div", Li, [
-      Hi,
-      Ei(" \u52A0\u8F7D\u4E2D ")
-    ])) : O("", !0),
-    I.testBtn && !I.showPop && j.showBtn ? (a(), K("div", {
-      key: 1,
-      class: "test-btn",
-      onClick: U[0] || (U[0] = (...S) => I.initPop && I.initPop(...S))
-    }, [
-      Zi,
-      Ei(" \u70B9\u51FB\u6309\u94AE\u8FDB\u884C\u9A8C\u8BC1 ")
-    ])) : O("", !0),
-    I.showPop && j.showBtn ? (a(), K("div", zi, "\u9A8C\u8BC1\u4E2D")) : O("", !0),
-    I.successBtn && j.showBtn ? (a(), K("div", pi, [
-      Ni,
-      Ei("\u9A8C\u8BC1\u6210\u529F ")
-    ])) : O("", !0),
-    I.showPop ? (a(), K("div", {
-      key: 4,
-      onMousemove: U[6] || (U[6] = (...S) => I.dragMove && I.dragMove(...S)),
-      onMouseup: U[7] || (U[7] = (...S) => I.dragUp && I.dragUp(...S)),
-      class: y([
-        "reg-pop",
-        I.popAnimate,
-        I.testContent === !0 ? "test-pop" : "",
-        I.ending === !0 ? "ending" : "",
-        I.timesContent === !0 ? "times-pop" : "",
-        I.successContent === !0 ? "success-pop" : ""
-      ])
-    }, [
-      I.loadContent ? (a(), K("div", mi, qi)) : O("", !0),
-      I.testContent ? (a(), K("div", di, [
-        Q("div", Ti, [
-          Wi,
-          Q("div", {
-            class: y(["test", [
-              I.refresh === !0 ? "hide" : "",
-              I.popAnimate === "success" ? "none" : ""
-            ]])
-          }, [
-            Q("canvas", ti, null, 512),
-            Q("canvas", ni, null, 512)
-          ], 2),
-          Q("div", {
-            class: y(["right", [
-              I.refresh === !0 ? "hide" : "",
-              I.popAnimate === "success" ? "bright" : "none"
-            ]])
-          }, [
-            Q("canvas", Pi, null, 512)
-          ], 2),
-          Q("div", {
-            class: y(["result-msg", [
-              I.testStatus !== 0 ? "show" : "",
-              I.testSuccess === !0 ? "success" : ""
-            ]])
-          }, [
-            I.testSuccess === !0 ? (a(), K("span", Xi, hi(I.time) + " \u79D2\u7684\u901F\u5EA6\u8D85\u8FC7 " + hi(I.percentage) + "% \u7684\u7528\u6237", 1)) : I.testSuccess === !1 && I.percentage < 0 ? (a(), K("span", ri, "\u52A8\u4F5C\u592A\u6162\uFF0C\u65B9\u5757\u88AB\u602A\u517D\u5403\u6389\u4E86")) : (a(), K("span", Ai, "\u62D6\u52A8\u6ED1\u5757\u5C06\u60AC\u6D6E\u56FE\u50CF\u6B63\u786E\u62FC\u5408"))
-          ], 2)
-        ]),
-        Q("div", vi, [
-          Q("div", {
-            class: y([
-              "source drag-btn",
-              I.moveBtnStatus === 1 ? "drag" : I.moveBtnStatus === 2 ? "drag-end" : ""
-            ]),
-            ref: "dragBtn",
-            onMousedown: U[1] || (U[1] = (...S) => I.dragDown && I.dragDown(...S))
-          }, null, 34),
-          Q("span", {
-            class: y(
-              I.moveTxtStatus === 1 ? "hide" : I.moveTxtStatus === 2 ? "none" : ""
-            )
-          }, "\u62D6\u52A8\u5DE6\u8FB9\u6ED1\u5757\u5B8C\u6210\u4E0A\u65B9\u62FC\u56FE", 2)
-        ]),
-        Q("div", fi, [
-          Q("div", {
-            class: "source close",
-            onClick: U[2] || (U[2] = (...S) => I.closePop && I.closePop(...S))
-          }, _i),
-          Q("div", {
-            class: "source refresh",
-            onClick: U[3] || (U[3] = (...S) => I.drawImg && I.drawImg(...S))
-          }, iI)
-        ])
-      ])) : O("", !0),
-      I.successContent ? (a(), K("div", II, EI)) : O("", !0),
-      I.timesContent ? (a(), K("div", hI, [
-        QI,
-        Q("p", null, hi(I.errMsg), 1),
-        Q("div", eI, [
-          Q("span", {
-            onClick: U[4] || (U[4] = (...S) => I.doAgain && I.doAgain(...S))
-          }, "\u8BF7\u70B9\u51FB\u6B64\u5904\u91CD\u8BD5"),
-          I.errMsg !== "\u5C1D\u8BD5\u8FC7\u591A" ? (a(), K("em", CI, " or ")) : O("", !0),
-          I.errMsg !== "\u5C1D\u8BD5\u8FC7\u591A" ? (a(), K("span", {
-            key: 1,
-            onClick: U[5] || (U[5] = (...S) => I.elseClose && I.elseClose(...S))
-          }, "\u5173\u95ED\u9A8C\u8BC1")) : O("", !0)
-        ])
-      ])) : O("", !0)
-    ], 34)) : O("", !0)
-  ]);
-}
-const RI = /* @__PURE__ */ Vi(Bi, [["render", YI]]), FI = [RI], kI = {
-  install(c) {
-    FI.forEach((U) => {
-      c.component(U.name, U);
+}, hI = [oI], QI = {
+  install(H) {
+    hI.forEach((A) => {
+      H.component("vuePuzzleSliderPlus", A);
     });
   }
 };
-typeof window < "u" && window.Vue && window.Vue.use(kI);
+typeof window < "u" && window.Vue && window.Vue.use(QI);
 export {
-  kI as default
+  QI as default
 };
