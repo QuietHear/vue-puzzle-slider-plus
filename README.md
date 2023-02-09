@@ -1,5 +1,5 @@
 # 滑动拼图（vue3版）
-***vue3版本*** | [**vue2版本**](https://github.com/QuietHear/vue-puzzle-slider '浏览')
+***vue3版本*** | [**vue2版本**](https://github.com/QuietHear/vue-puzzle-slider '右键新窗口浏览')
 
 
 ## 安装
@@ -78,3 +78,7 @@
 
 ## 2. 方法
 * `initPop`：手动开始触发验证-->建议showBtn为false时使用
+
+
+## 更多vue3组件
+[**自定义右键菜单**](https://github.com/QuietHear/vue-diy-rightmenu-plus '右键新窗口浏览') | [**可拖拽菜单**](https://github.com/QuietHear/vue-drag-menu-plus '右键新窗口浏览') | [**echarts组件**](https://github.com/QuietHear/vue-echarts-block-plus '右键新窗口浏览') | [**基于el-menu的菜单组件**](https://github.com/QuietHear/vue-ele-nav-plus '右键新窗口浏览') | [**面包屑组件**](https://github.com/QuietHear/vue-permission-breads-plus '右键新窗口浏览') | ***滑动拼图*** | [**工作日历**](https://github.com/QuietHear/vue-shop-calendar-plus '右键新窗口浏览') | [**uEditor**](https://github.com/QuietHear/vue-ueditor-block-plus '右键新窗口浏览') | [**wangEditor**](https://github.com/QuietHear/vue-wangEditor-block-plus '右键新窗口浏览')
