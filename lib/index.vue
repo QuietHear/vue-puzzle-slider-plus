@@ -4,7 +4,7 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-01-11 17:51:57
+ * @LastEditTime: 2023-02-20 14:56:21
 */
 <template>
   <div class="vue-puzzle-slider-plus">
@@ -114,7 +114,6 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted, nextTick } from "vue";
 const emit = defineEmits(["change"]);
 const props = defineProps({
   // 展示按钮控件
