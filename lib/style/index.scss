@@ -4,11 +4,12 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2022-08-03 10:18:09
+ * @LastEditTime: 2023-09-22 13:35:42
 */
 .vue-puzzle-slider-plus {
   position: relative;
   width   : 100%;
+  height  : 100%;
 
   .source {
     background: url("source/source.png") no-repeat;
@@ -135,6 +136,7 @@
     align-items: center;
     font-size  : 14px;
     user-select: none;
+    height     : 100%;
 
     span {
       width              : 25px;
@@ -329,6 +331,7 @@
         color              : #88949d;
         user-select        : none;
         padding-left       : 65px;
+        line-height        : 40px;
 
         .drag-btn {
           width              : 56px;

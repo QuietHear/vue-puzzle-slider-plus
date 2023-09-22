@@ -4,7 +4,7 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-02-20 14:56:21
+ * @LastEditTime: 2023-09-22 15:33:57
 */
 <template>
   <div class="vue-puzzle-slider-plus">
@@ -68,16 +68,14 @@
           </div>
         </div>
         <div class="btn-middle source">
-          <div class="source drag-btn" ref="dragBtn" :class="
-            moveBtnStatus === 1
-              ? 'drag'
-              : moveBtnStatus === 2
-                ? 'drag-end'
-                : ''
-          " @mousedown="dragDown"></div>
-          <span :class="
-            moveTxtStatus === 1 ? 'hide' : moveTxtStatus === 2 ? 'none' : ''
-          ">拖动左边滑块完成上方拼图</span>
+          <div class="source drag-btn" ref="dragBtn" :class="moveBtnStatus === 1
+            ? 'drag'
+            : moveBtnStatus === 2
+              ? 'drag-end'
+              : ''
+            " @mousedown="dragDown"></div>
+          <span :class="moveTxtStatus === 1 ? 'hide' : moveTxtStatus === 2 ? 'none' : ''
+            ">拖动左边滑块完成上方拼图</span>
         </div>
         <div class="operate-bottom">
           <div class="source close" @click="closePop">
@@ -106,8 +104,10 @@
         <p>{{ errMsg }}</p>
         <div class="error-msg">
           <span @click="doAgain">请点击此处重试</span>
-          <em v-if="errMsg !== '尝试过多'"> or </em>
-          <span @click="elseClose" v-if="errMsg !== '尝试过多'">关闭验证</span>
+          <template v-if="errMsg !== '尝试过多'">
+            <em> or </em>
+            <span @click="elseClose">关闭验证</span>
+          </template>
         </div>
       </div>
     </div>
@@ -233,7 +233,8 @@ const popListener = (e) => {
     closest(e.target, ".reg-pop") === null &&
     popAnimate.value !== "success"
   ) {
-    if (!showPop.value) {
+    console.log(showPop.value, 'showPop.value');
+    if ((timesContent.value === false && testContent.value === false) || !showPop.value) {
       showPop.value = true;
       loadContent.value = true;
       testContent.value = false;
@@ -351,6 +352,7 @@ const drawImg = async () => {
           ctx_lost = c_lost.getContext("2d"),
           ctx_one = c_one.getContext("2d");
         testX.value = decResult(res.data.width);
+        console.log(testX.value, '解 传入');
         testY.value = res.data.y;
         moveMin.value =
           -testX.value + testXMin.value - testWidth.value / 2;
@@ -606,11 +608,13 @@ const randomPath = () => {
 // 重试
 const doAgain = () => {
   times.value = 0;
+  clearInterval(timeInit.value);
+  timeInit.value = null;
+  moveTxtStatus.value = 0;
+  moveBtnStatus.value = 0;
+  testStatus.value = 0;
+  ending.value = false;
   timesContent.value = false;
-  testContent.value = true;
-  nextTick(() => {
-    drawImg();
-  });
 };
 // 开始拖拽
 const dragDown = (e) => {
@@ -661,6 +665,7 @@ const dragUp = () => {
 };
 // 拖拽结果校验
 const checkResult = async () => {
+  console.log(parseInt(testOne.value.style.left) - moveMin.value + testr.value, '发 传出');
   const res = await props.setFunction({
     x: encResult(
       parseInt(testOne.value.style.left) - moveMin.value + testr.value
@@ -747,6 +752,10 @@ const checkResult = async () => {
 };
 // 关闭正常弹窗
 const closePop = () => {
+  if (timesContent.value === true) {
+    elseClose();
+    return;
+  }
   // 关闭弹窗
   if (testContent.value === true && popAnimate.value !== "success") {
     window.removeEventListener("click", popListener, false);
@@ -765,8 +774,14 @@ const closePop = () => {
 };
 // 关闭错误弹窗
 const elseClose = () => {
-  window.removeEventListener("click", popListener, false);
   showPop.value = false;
+  clearInterval(timeInit.value);
+  timeInit.value = null;
+  moveTxtStatus.value = 0;
+  moveBtnStatus.value = 0;
+  testStatus.value = 0;
+  window.removeEventListener("click", popListener, false);
+  ending.value = false;
   timesContent.value = false;
   emit("change", false, "");
 };

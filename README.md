@@ -1,6 +1,8 @@
 # 滑动拼图（vue3版）
 ***vue3版本*** | [**vue2版本**](https://github.com/QuietHear/vue-puzzle-slider '右键新窗口浏览')
 
+## 预览
+	clone项目后npm run preview即可
 
 ## 安装
 	npm i vue-puzzle-slider-plus
@@ -58,7 +60,7 @@
 	// 例子
     const test = (obj) => {
 		// 这个地方的obj是组件内部传入，参数分别代表
-		// x:''; eg:加密后的移动距离，需要解密（btoa先解密，再将4进制转换为10进制，然后加16再开方）
+		// x:''; eg:加密后的移动距离，需要解密（atob先解密，再将4进制转换为10进制，然后加16再开方）
 		// time:1; eg:移动花费的时间
     	return new Promise(async (resolve) => {
         	const res = await APIUrl(obj);
