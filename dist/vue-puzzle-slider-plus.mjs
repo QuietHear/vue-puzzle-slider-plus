@@ -1,35 +1,35 @@
-import { ref as I, onMounted as Di, openBlock as S, createElementBlock as J, unref as Q, createTextVNode as oi, createCommentVNode as V, normalizeClass as d, createElementVNode as E, toDisplayString as Ei, Fragment as ji, nextTick as Vi, createStaticVNode as Bi } from "vue";
+import { ref as I, onMounted as Di, openBlock as S, createElementBlock as J, unref as Q, createTextVNode as oi, createCommentVNode as V, normalizeClass as d, createElementVNode as h, toDisplayString as Ei, Fragment as ji, nextTick as Vi, createStaticVNode as Bi } from "vue";
 const wi = { class: "vue-puzzle-slider-plus" }, Li = {
   key: 0,
   class: "load-btn"
-}, Hi = /* @__PURE__ */ E("div", { class: "ding" }, [
-  /* @__PURE__ */ E("div"),
-  /* @__PURE__ */ E("div"),
-  /* @__PURE__ */ E("div")
-], -1), Zi = /* @__PURE__ */ E("div", { class: "ding" }, [
-  /* @__PURE__ */ E("div", { class: "out" }),
-  /* @__PURE__ */ E("div", { class: "in" })
+}, Hi = /* @__PURE__ */ h("div", { class: "ding" }, [
+  /* @__PURE__ */ h("div"),
+  /* @__PURE__ */ h("div"),
+  /* @__PURE__ */ h("div")
+], -1), Zi = /* @__PURE__ */ h("div", { class: "ding" }, [
+  /* @__PURE__ */ h("div", { class: "out" }),
+  /* @__PURE__ */ h("div", { class: "in" })
 ], -1), pi = {
   key: 2,
   class: "testing-btn"
 }, zi = {
   key: 3,
   class: "success-btn"
-}, Ni = /* @__PURE__ */ E("span", { class: "source" }, null, -1), ui = {
+}, Ni = /* @__PURE__ */ h("span", { class: "source" }, null, -1), ui = {
   key: 0,
   class: "load-content"
-}, mi = /* @__PURE__ */ E("div", null, null, -1), yi = /* @__PURE__ */ E("p", null, "智能验证检测中", -1), qi = [
+}, mi = /* @__PURE__ */ h("div", null, null, -1), yi = /* @__PURE__ */ h("p", null, "智能验证检测中", -1), qi = [
   mi,
   yi
 ], di = {
   key: 1,
   class: "test-content"
-}, Ti = { class: "img-top" }, Wi = /* @__PURE__ */ E("div", { class: "bg" }, [
-  /* @__PURE__ */ E("div", { class: "source nothing" }),
-  /* @__PURE__ */ E("p", null, "加载中...")
-], -1), ti = { key: 0 }, Pi = { key: 1 }, ni = { key: 2 }, Xi = { class: "btn-middle source" }, ri = /* @__PURE__ */ E("div", { class: "msg" }, "关闭验证", -1), Ai = [
+}, Ti = { class: "img-top" }, Wi = /* @__PURE__ */ h("div", { class: "bg" }, [
+  /* @__PURE__ */ h("div", { class: "source nothing" }),
+  /* @__PURE__ */ h("p", null, "加载中...")
+], -1), ti = { key: 0 }, Pi = { key: 1 }, ni = { key: 2 }, Xi = { class: "btn-middle source" }, ri = /* @__PURE__ */ h("div", { class: "msg" }, "关闭验证", -1), Ai = [
   ri
-], vi = /* @__PURE__ */ E("div", { class: "msg" }, "刷新验证", -1), fi = [
+], vi = /* @__PURE__ */ h("div", { class: "msg" }, "刷新验证", -1), fi = [
   vi
 ], bi = {
   key: 2,
@@ -39,7 +39,7 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
 ], iI = {
   key: 3,
   class: "times-content"
-}, II = /* @__PURE__ */ E("div", { class: "source" }, null, -1), oI = { class: "error-msg" }, EI = /* @__PURE__ */ E("em", null, " or ", -1), hI = {
+}, II = /* @__PURE__ */ h("div", { class: "source" }, null, -1), oI = { class: "error-msg" }, EI = /* @__PURE__ */ h("em", null, " or ", -1), hI = {
   __name: "index",
   props: {
     // 展示按钮控件
@@ -80,15 +80,15 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
     }
   },
   emits: ["change"],
-  setup(p, { expose: A, emit: v }) {
-    const x = p;
+  setup(Z, { expose: A, emit: v }) {
+    const x = Z;
     let hi = I(!0);
     Di(() => {
       setTimeout(() => {
         hi.value = !1, f.value = !0;
       }, 1500);
     });
-    let f = I(!1), ei = I(!1), w = I(!1), z = I(!1), s = I(""), b = I(!1), K = I(!1), M = I(!1), _ = I(!1), N = I(0), T = I(0);
+    let f = I(!1), ei = I(!1), w = I(!1), p = I(!1), s = I(""), b = I(!1), K = I(!1), M = I(!1), _ = I(!1), N = I(0), T = I(0);
     const Qi = I(6);
     let B = I(null), u = I(""), W = I(!1), L = I(0), m = I(!1), G = I(0), O = I(0), t = I(0), gi = I(0), P = I(0);
     const Yi = () => {
@@ -105,16 +105,14 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
         });
       }, 1e3)) : ki());
     }, l = I(50), U = I(50);
-    let g = I([]), H = I(0), $ = I(0), h = I(0);
+    let g = I([]), z = I(0), $ = I(0), E = I(0);
     const X = I(0), r = I(0), Y = I(0), ii = I(0), Ii = I(0);
     let c = I(0);
     const Ci = I(7), Ri = I(12), Fi = I(null), a = I(null), y = I(null), D = I(null), li = async () => {
       if (N.value += 1, N.value > Qi.value)
         K.value = !1, u.value = "尝试过多", M.value = !0;
       else {
-        W.value = !0, g.value = [...ai()], c.value = Math.floor(
-          Math.random() * (Ri.value - Ci.value + 1) + Ci.value
-        ), X.value = x.space + l.value / 2, r.value = D.value.width - x.space - l.value, ii.value = x.space, Ii.value = D.value.height - x.space - U.value;
+        W.value = !0, g.value = [...ai()], c.value = Math.floor(Math.random() * (Ri.value - Ci.value + 1) + Ci.value), X.value = x.space + l.value / 2, r.value = D.value.width - x.space - l.value, ii.value = x.space, Ii.value = D.value.height - x.space - U.value;
         for (let o = 0; o < g.value.length; o++)
           g.value[o].direction === "left" && g.value[o].much === "outside" ? X.value = x.space + c.value + l.value / 2 : g.value[o].direction === "right" && g.value[o].much === "outside" ? r.value = D.value.width - c.value - x.space - l.value : g.value[o].direction === "top" && g.value[o].much === "outside" ? ii.value = x.space + c.value : g.value[o].direction === "bottom" && g.value[o].much === "outside" && (Ii.value = D.value.height - c.value - x.space - U.value);
         const i = await x.getFunction({
@@ -132,62 +130,26 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
           setTimeout(() => {
             W.value = !1;
             let o = D.value, e = Fi.value, C = a.value, q = o.getContext("2d"), R = e.getContext("2d"), F = C.getContext("2d");
-            h.value = Ji(i.data.width), Y.value = i.data.y, H.value = -h.value + X.value - l.value / 2, $.value = r.value - h.value, C.style.left = H.value + "px", q.clearRect(0, 0, o.width, o.height), R.clearRect(0, 0, e.width, e.height), F.clearRect(0, 0, C.width, C.height);
+            E.value = Ji(i.data.width), Y.value = i.data.y, z.value = -E.value + X.value - l.value / 2, $.value = r.value - E.value, C.style.left = z.value + "px", q.clearRect(0, 0, o.width, o.height), R.clearRect(0, 0, e.width, e.height), F.clearRect(0, 0, C.width, C.height);
             let j = xi();
             j.onload = () => {
-              q.drawImage(
-                j,
-                0,
-                0,
-                j.width,
-                j.height,
-                0,
-                0,
-                o.width,
-                o.height
-              ), R.save(), R.drawImage(
-                j,
-                0,
-                0,
-                j.width,
-                j.height,
-                0,
-                0,
-                e.width,
-                e.height
-              ), R.strokeStyle = "rgba(255,255,255,.4)", R.lineWidth = 1, R.beginPath(), R.moveTo(h.value, Y.value), g.value.forEach((k) => {
-                k.direction === "top" && Z(R, k);
-              }), R.lineTo(h.value + l.value, Y.value), g.value.forEach((k) => {
-                k.direction === "right" && Z(R, k);
-              }), R.lineTo(
-                h.value + l.value,
-                Y.value + U.value
-              ), g.value.forEach((k) => {
-                k.direction === "bottom" && Z(R, k);
-              }), R.lineTo(h.value, Y.value + U.value), g.value.forEach((k) => {
-                k.direction === "left" && Z(R, k);
-              }), R.lineTo(h.value, Y.value), R.closePath(), R.stroke(), R.restore(), R.save(), R.fillStyle = "rgba(0,0,0,.65)", R.fill(), R.restore(), F.strokeStyle = "#F6F152", F.lineWidth = 3.5, F.shadowBlur = 5, F.shadowOffsetX = 0, F.shadowOffsetY = 0, F.shadowColor = "black", F.save(), F.beginPath(), F.moveTo(h.value, Y.value), g.value.forEach((k) => {
-                k.direction === "top" && Z(F, k);
-              }), F.lineTo(h.value + l.value, Y.value), g.value.forEach((k) => {
-                k.direction === "right" && Z(F, k);
-              }), F.lineTo(
-                h.value + l.value,
-                Y.value + U.value
-              ), g.value.forEach((k) => {
-                k.direction === "bottom" && Z(F, k);
-              }), F.lineTo(h.value, Y.value + U.value), g.value.forEach((k) => {
-                k.direction === "left" && Z(F, k);
-              }), F.lineTo(h.value, Y.value), F.closePath(), F.stroke(), F.stroke(), F.stroke(), F.clip(), F.drawImage(
-                j,
-                0,
-                0,
-                j.width,
-                j.height,
-                0,
-                0,
-                C.width,
-                C.height
-              ), F.restore();
+              q.drawImage(j, 0, 0, j.width, j.height, 0, 0, o.width, o.height), R.save(), R.drawImage(j, 0, 0, j.width, j.height, 0, 0, e.width, e.height), R.strokeStyle = "rgba(255,255,255,.4)", R.lineWidth = 1, R.beginPath(), R.moveTo(E.value, Y.value), g.value.forEach((k) => {
+                k.direction === "top" && H(R, k);
+              }), R.lineTo(E.value + l.value, Y.value), g.value.forEach((k) => {
+                k.direction === "right" && H(R, k);
+              }), R.lineTo(E.value + l.value, Y.value + U.value), g.value.forEach((k) => {
+                k.direction === "bottom" && H(R, k);
+              }), R.lineTo(E.value, Y.value + U.value), g.value.forEach((k) => {
+                k.direction === "left" && H(R, k);
+              }), R.lineTo(E.value, Y.value), R.closePath(), R.stroke(), R.restore(), R.save(), R.fillStyle = "rgba(0,0,0,.65)", R.fill(), R.restore(), F.strokeStyle = "#F6F152", F.lineWidth = 3.5, F.shadowBlur = 5, F.shadowOffsetX = 0, F.shadowOffsetY = 0, F.shadowColor = "black", F.save(), F.beginPath(), F.moveTo(E.value, Y.value), g.value.forEach((k) => {
+                k.direction === "top" && H(F, k);
+              }), F.lineTo(E.value + l.value, Y.value), g.value.forEach((k) => {
+                k.direction === "right" && H(F, k);
+              }), F.lineTo(E.value + l.value, Y.value + U.value), g.value.forEach((k) => {
+                k.direction === "bottom" && H(F, k);
+              }), F.lineTo(E.value, Y.value + U.value), g.value.forEach((k) => {
+                k.direction === "left" && H(F, k);
+              }), F.lineTo(E.value, Y.value), F.closePath(), F.stroke(), F.stroke(), F.stroke(), F.clip(), F.drawImage(j, 0, 0, j.width, j.height, 0, 0, C.width, C.height), F.restore();
             };
           }, 500);
         else
@@ -202,74 +164,20 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
     }, Ji = (i) => {
       let o = window.atob(i);
       return o = parseInt(o, 8), o = Math.sqrt(o + 64), o;
-    }, Z = (i, o) => {
+    }, H = (i, o) => {
       let e = c.value, C = c.value;
       switch (o.direction) {
         case "top":
-          C = o.much === "inside" ? C : -C, i.lineTo(h.value + l.value / 2 - e, Y.value), i.arcTo(
-            h.value + l.value / 2 - e,
-            Y.value + C,
-            h.value + l.value / 2,
-            Y.value + C,
-            c.value
-          ), i.arcTo(
-            h.value + l.value / 2 + e,
-            Y.value + C,
-            h.value + l.value / 2 + e,
-            Y.value,
-            c.value
-          );
+          C = o.much === "inside" ? C : -C, i.lineTo(E.value + l.value / 2 - e, Y.value), i.arcTo(E.value + l.value / 2 - e, Y.value + C, E.value + l.value / 2, Y.value + C, c.value), i.arcTo(E.value + l.value / 2 + e, Y.value + C, E.value + l.value / 2 + e, Y.value, c.value);
           break;
         case "right":
-          e = o.much === "inside" ? -e : e, i.lineTo(
-            h.value + l.value,
-            Y.value + U.value / 2 - C
-          ), i.arcTo(
-            h.value + l.value + e,
-            Y.value + U.value / 2 - C,
-            h.value + l.value + e,
-            Y.value + U.value / 2,
-            c.value
-          ), i.arcTo(
-            h.value + l.value + e,
-            Y.value + U.value / 2 + C,
-            h.value + l.value,
-            Y.value + U.value / 2 + C,
-            c.value
-          );
+          e = o.much === "inside" ? -e : e, i.lineTo(E.value + l.value, Y.value + U.value / 2 - C), i.arcTo(E.value + l.value + e, Y.value + U.value / 2 - C, E.value + l.value + e, Y.value + U.value / 2, c.value), i.arcTo(E.value + l.value + e, Y.value + U.value / 2 + C, E.value + l.value, Y.value + U.value / 2 + C, c.value);
           break;
         case "bottom":
-          C = o.much === "inside" ? -C : C, i.lineTo(
-            h.value + l.value / 2 + e,
-            Y.value + U.value
-          ), i.arcTo(
-            h.value + l.value / 2 + e,
-            Y.value + U.value + C,
-            h.value + l.value / 2,
-            Y.value + U.value + C,
-            c.value
-          ), i.arcTo(
-            h.value + l.value / 2 - e,
-            Y.value + U.value + C,
-            h.value + l.value / 2 - e,
-            Y.value + U.value,
-            c.value
-          );
+          C = o.much === "inside" ? -C : C, i.lineTo(E.value + l.value / 2 + e, Y.value + U.value), i.arcTo(E.value + l.value / 2 + e, Y.value + U.value + C, E.value + l.value / 2, Y.value + U.value + C, c.value), i.arcTo(E.value + l.value / 2 - e, Y.value + U.value + C, E.value + l.value / 2 - e, Y.value + U.value, c.value);
           break;
         case "left":
-          e = o.much === "inside" ? e : -e, i.lineTo(h.value, Y.value + U.value / 2 + C), i.arcTo(
-            h.value + e,
-            Y.value + U.value / 2 + C,
-            h.value + e,
-            Y.value + U.value / 2,
-            c.value
-          ), i.arcTo(
-            h.value + e,
-            Y.value + U.value / 2 - C,
-            h.value,
-            Y.value + U.value / 2 - C,
-            c.value
-          );
+          e = o.much === "inside" ? e : -e, i.lineTo(E.value, Y.value + U.value / 2 + C), i.arcTo(E.value + e, Y.value + U.value / 2 + C, E.value + e, Y.value + U.value / 2, c.value), i.arcTo(E.value + e, Y.value + U.value / 2 - C, E.value, Y.value + U.value / 2 - C, c.value);
           break;
       }
     }, xi = () => {
@@ -287,7 +195,7 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
       }
       return C;
     }, Ki = () => {
-      N.value = 0, clearInterval(B.value), B.value = null, O.value = 0, G.value = 0, L.value = 0, z.value = !1, M.value = !1;
+      N.value = 0, clearInterval(B.value), B.value = null, O.value = 0, G.value = 0, L.value = 0, p.value = !1, M.value = !1;
     }, Gi = (i) => {
       O.value === 0 && W.value === !1 && (G.value = 1, O.value = 1, T.value = 0, B.value = setInterval(() => {
         T.value = Math.round((T.value + 0.1) * 10) / 10;
@@ -295,26 +203,24 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
         O.value = 2;
       }, 50), t.value = i.pageX, gi.value = i.offsetX);
     }, Oi = (i) => {
-      G.value === 1 && (i.pageX - t.value < 0 ? (y.value.style.left = "0px", a.value.style.left = H.value + "px") : i.pageX - t.value > 260 - 56 ? (y.value.style.left = "204px", a.value.style.left = $.value + "px") : (a.value.style.left = H.value + ($.value - H.value) * (i.pageX - t.value) / (260 - 56) + "px", y.value.style.left = i.pageX - t.value + "px"));
+      G.value === 1 && (i.pageX - t.value < 0 ? (y.value.style.left = "0px", a.value.style.left = z.value + "px") : i.pageX - t.value > 260 - 56 ? (y.value.style.left = "204px", a.value.style.left = $.value + "px") : (a.value.style.left = z.value + ($.value - z.value) * (i.pageX - t.value) / (260 - 56) + "px", y.value.style.left = i.pageX - t.value + "px"));
     }, si = () => {
       G.value === 1 && (clearInterval(B.value), B.value = null, G.value = 2, L.value = 1, O.value = 1, Mi());
     }, Mi = async () => {
       const i = await x.setFunction({
-        x: Si(
-          parseInt(a.value.style.left) - H.value + c.value
-        ),
+        x: Si(parseInt(a.value.style.left) + E.value),
         time: T.value
       });
       if (P.value = i.data.percentage, i.code === 200)
         P.value > 0 ? (m.value = !0, s.value = "success", setTimeout(() => {
           L.value = 0, K.value = !1, _.value = !0, setTimeout(() => {
-            window.removeEventListener("click", n, !1), f.value = !1, z.value = !0, setTimeout(() => {
-              z.value = !1, w.value = !1, ei.value = !0, v("change", !0);
+            window.removeEventListener("click", n, !1), f.value = !1, p.value = !0, setTimeout(() => {
+              p.value = !1, w.value = !1, ei.value = !0, v("change", !0);
             }, 1e3);
           }, 1100);
         }, 1e3)) : (m.value = !1, s.value = "wrong", setTimeout(() => {
           a.value.style.opacity = 0, setTimeout(() => {
-            s.value = "", L.value = 0, y.value.style.left = "0px", a.value.style.left = H.value + "px", a.value.style.opacity = 1, setTimeout(() => {
+            s.value = "", L.value = 0, y.value.style.left = "0px", a.value.style.left = z.value + "px", a.value.style.opacity = 1, setTimeout(() => {
               O.value = 0, G.value = 0;
             }, 500);
           }, 500);
@@ -322,7 +228,7 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
       else if (i.code === 123)
         N.value += 1, N.value > Qi.value ? (K.value = !1, u.value = "尝试过多", M.value = !0) : (P.value = 1, m.value = !1, s.value = "wrong", setTimeout(() => {
           a.value.style.opacity = 0, setTimeout(() => {
-            s.value = "", L.value = 0, y.value.style.left = "0px", a.value.style.left = H.value + "px", a.value.style.opacity = 1, setTimeout(() => {
+            s.value = "", L.value = 0, y.value.style.left = "0px", a.value.style.left = z.value + "px", a.value.style.opacity = 1, setTimeout(() => {
               O.value = 0, G.value = 0;
             }, 500);
           }, 500);
@@ -337,18 +243,18 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
         Ui();
         return;
       }
-      K.value === !0 && s.value !== "success" && (window.removeEventListener("click", n, !1), z.value = !0, clearInterval(B.value), B.value = null, setTimeout(() => {
-        L.value = 0, O.value = 0, G.value = 0, z.value = !1, w.value = !1, v("change", !1);
+      K.value === !0 && s.value !== "success" && (window.removeEventListener("click", n, !1), p.value = !0, clearInterval(B.value), B.value = null, setTimeout(() => {
+        L.value = 0, O.value = 0, G.value = 0, p.value = !1, w.value = !1, v("change", !1);
       }, 1e3));
     }, Ui = () => {
-      w.value = !1, clearInterval(B.value), B.value = null, O.value = 0, G.value = 0, L.value = 0, window.removeEventListener("click", n, !1), z.value = !1, M.value = !1, v("change", !1, "");
+      w.value = !1, clearInterval(B.value), B.value = null, O.value = 0, G.value = 0, L.value = 0, window.removeEventListener("click", n, !1), p.value = !1, M.value = !1, v("change", !1, "");
     };
     return A({ initPop: Yi }), (i, o) => (S(), J("div", wi, [
-      Q(hi) && p.showBtn ? (S(), J("div", Li, [
+      Q(hi) && Z.showBtn ? (S(), J("div", Li, [
         Hi,
         oi(" 加载中 ")
       ])) : V("", !0),
-      Q(f) && !Q(w) && p.showBtn ? (S(), J("div", {
+      Q(f) && !Q(w) && Z.showBtn ? (S(), J("div", {
         key: 1,
         class: "test-btn",
         onClick: Yi
@@ -356,8 +262,8 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
         Zi,
         oi(" 点击按钮进行验证 ")
       ])) : V("", !0),
-      Q(w) && p.showBtn ? (S(), J("div", pi, "验证中")) : V("", !0),
-      Q(ei) && p.showBtn ? (S(), J("div", zi, [
+      Q(w) && Z.showBtn ? (S(), J("div", pi, "验证中")) : V("", !0),
+      Q(ei) && Z.showBtn ? (S(), J("div", zi, [
         Ni,
         oi("验证成功 ")
       ])) : V("", !0),
@@ -369,48 +275,48 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
           "reg-pop",
           Q(s),
           Q(K) === !0 ? "test-pop" : "",
-          Q(z) === !0 ? "ending" : "",
+          Q(p) === !0 ? "ending" : "",
           Q(M) === !0 ? "times-pop" : "",
           Q(_) === !0 ? "success-pop" : ""
         ])
       }, [
         Q(b) ? (S(), J("div", ui, qi)) : V("", !0),
         Q(K) ? (S(), J("div", di, [
-          E("div", Ti, [
+          h("div", Ti, [
             Wi,
-            E("div", {
+            h("div", {
               class: d(["test", [
                 Q(W) === !0 ? "hide" : "",
                 Q(s) === "success" ? "none" : ""
               ]])
             }, [
-              E("canvas", {
+              h("canvas", {
                 ref_key: "testLost",
                 ref: Fi,
                 width: "260",
                 height: "156"
               }, null, 512),
-              E("canvas", {
+              h("canvas", {
                 ref_key: "testOne",
                 ref: a,
                 width: "260",
                 height: "156"
               }, null, 512)
             ], 2),
-            E("div", {
+            h("div", {
               class: d(["right", [
                 Q(W) === !0 ? "hide" : "",
                 Q(s) === "success" ? "bright" : "none"
               ]])
             }, [
-              E("canvas", {
+              h("canvas", {
                 ref_key: "right",
                 ref: D,
                 width: "260",
                 height: "156"
               }, null, 512)
             ], 2),
-            E("div", {
+            h("div", {
               class: d(["result-msg", [
                 Q(L) !== 0 ? "show" : "",
                 Q(m) === !0 ? "success" : ""
@@ -419,8 +325,8 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
               Q(m) === !0 ? (S(), J("span", ti, Ei(Q(T)) + " 秒的速度超过 " + Ei(Q(P)) + "% 的用户", 1)) : Q(m) === !1 && Q(P) < 0 ? (S(), J("span", Pi, "动作太慢，方块被怪兽吃掉了")) : (S(), J("span", ni, "拖动滑块将悬浮图像正确拼合"))
             ], 2)
           ]),
-          E("div", Xi, [
-            E("div", {
+          h("div", Xi, [
+            h("div", {
               class: d([
                 "source drag-btn",
                 Q(G) === 1 ? "drag" : Q(G) === 2 ? "drag-end" : ""
@@ -429,18 +335,18 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
               ref: y,
               onMousedown: Gi
             }, null, 34),
-            E("span", {
+            h("span", {
               class: d(
                 Q(O) === 1 ? "hide" : Q(O) === 2 ? "none" : ""
               )
             }, "拖动左边滑块完成上方拼图", 2)
           ]),
-          E("div", { class: "operate-bottom" }, [
-            E("div", {
+          h("div", { class: "operate-bottom" }, [
+            h("div", {
               class: "source close",
               onClick: ki
             }, Ai),
-            E("div", {
+            h("div", {
               class: "source refresh",
               onClick: li
             }, fi)
@@ -449,12 +355,12 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
         Q(_) ? (S(), J("div", bi, $i)) : V("", !0),
         Q(M) ? (S(), J("div", iI, [
           II,
-          E("p", null, Ei(Q(u)), 1),
-          E("div", oI, [
-            E("span", { onClick: Ki }, "请点击此处重试"),
+          h("p", null, Ei(Q(u)), 1),
+          h("div", oI, [
+            h("span", { onClick: Ki }, "请点击此处重试"),
             Q(u) !== "尝试过多" ? (S(), J(ji, { key: 0 }, [
               EI,
-              E("span", { onClick: Ui }, "关闭验证")
+              h("span", { onClick: Ui }, "关闭验证")
             ], 64)) : V("", !0)
           ])
         ])) : V("", !0)
@@ -462,9 +368,9 @@ const wi = { class: "vue-puzzle-slider-plus" }, Li = {
     ]));
   }
 }, eI = [hI], QI = {
-  install(p) {
+  install(Z) {
     eI.forEach((A) => {
-      p.component("vuePuzzleSliderPlus", A);
+      Z.component("vuePuzzleSliderPlus", A);
     });
   }
 };

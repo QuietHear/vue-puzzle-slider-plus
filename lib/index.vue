@@ -1,10 +1,10 @@
 /*
- * @Author: aFei
- * @Date: 2022-07-07 15:36:46
+* @Author: aFei
+* @Date: 2022-07-07 15:36:46
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-09-22 15:33:57
+ * @LastEditTime: 2025-06-18 10:56:13
 */
 <template>
   <div class="vue-puzzle-slider-plus">
@@ -214,11 +214,7 @@ const initPop = () => {
 // jq的$closest方法
 const closest = (el, selector) => {
   // 实现closest()方法
-  let matchesSelector =
-    el.matches ||
-    el.webkitMatchesSelector ||
-    el.mozMatchesSelector ||
-    el.msMatchesSelector;
+  let matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
   while (el) {
     if (matchesSelector.call(el, selector)) {
       break;
@@ -229,10 +225,7 @@ const closest = (el, selector) => {
 };
 // 检测弹窗事件
 const popListener = (e) => {
-  if (
-    closest(e.target, ".reg-pop") === null &&
-    popAnimate.value !== "success"
-  ) {
+  if (closest(e.target, ".reg-pop") === null && popAnimate.value !== "success") {
     console.log(showPop.value, 'showPop.value');
     if ((timesContent.value === false && testContent.value === false) || !showPop.value) {
       showPop.value = true;
@@ -298,37 +291,21 @@ const drawImg = async () => {
     refresh.value = true;
     testPath.value = [...randomPath()];
     // 左开右闭区间，+1
-    testr.value = Math.floor(
-      Math.random() * (testrMax.value - testrMin.value + 1) + testrMin.value
-    );
+    testr.value = Math.floor(Math.random() * (testrMax.value - testrMin.value + 1) + testrMin.value);
     testXMin.value = props.space + testWidth.value / 2;
     testXMax.value = right.value.width - props.space - testWidth.value;
     testYMin.value = props.space;
     testYMax.value = right.value.height - props.space - testHeight.value;
     // 计算最大距离
     for (let i = 0; i < testPath.value.length; i++) {
-      if (
-        testPath.value[i].direction === "left" &&
-        testPath.value[i].much === "outside"
-      ) {
+      if (testPath.value[i].direction === "left" && testPath.value[i].much === "outside") {
         testXMin.value = props.space + testr.value + testWidth.value / 2;
-      } else if (
-        testPath.value[i].direction === "right" &&
-        testPath.value[i].much === "outside"
-      ) {
-        testXMax.value =
-          right.value.width - testr.value - props.space - testWidth.value;
-      } else if (
-        testPath.value[i].direction === "top" &&
-        testPath.value[i].much === "outside"
-      ) {
+      } else if (testPath.value[i].direction === "right" && testPath.value[i].much === "outside") {
+        testXMax.value = right.value.width - testr.value - props.space - testWidth.value;
+      } else if (testPath.value[i].direction === "top" && testPath.value[i].much === "outside") {
         testYMin.value = props.space + testr.value;
-      } else if (
-        testPath.value[i].direction === "bottom" &&
-        testPath.value[i].much === "outside"
-      ) {
-        testYMax.value =
-          right.value.height - testr.value - props.space - testHeight.value;
+      } else if (testPath.value[i].direction === "bottom" && testPath.value[i].much === "outside") {
+        testYMax.value = right.value.height - testr.value - props.space - testHeight.value;
       }
     }
     const res = await props.getFunction({
@@ -354,8 +331,7 @@ const drawImg = async () => {
         testX.value = decResult(res.data.width);
         console.log(testX.value, '解 传入');
         testY.value = res.data.y;
-        moveMin.value =
-          -testX.value + testXMin.value - testWidth.value / 2;
+        moveMin.value = -testX.value + testXMin.value - testWidth.value / 2;
         moveMax.value = testXMax.value - testX.value;
         c_one.style.left = moveMin.value + "px";
         ctx.clearRect(0, 0, c.width, c.height);
@@ -365,30 +341,10 @@ const drawImg = async () => {
         // 图片加载成功
         img.onload = () => {
           // 画正确的图片
-          ctx.drawImage(
-            img,
-            0,
-            0,
-            img.width,
-            img.height,
-            0,
-            0,
-            c.width,
-            c.height
-          );
+          ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, c.width, c.height);
           // 画带缺口图片
           ctx_lost.save();
-          ctx_lost.drawImage(
-            img,
-            0,
-            0,
-            img.width,
-            img.height,
-            0,
-            0,
-            c_lost.width,
-            c_lost.height
-          );
+          ctx_lost.drawImage(img, 0, 0, img.width, img.height, 0, 0, c_lost.width, c_lost.height);
           ctx_lost.strokeStyle = "rgba(255,255,255,.4)";
           ctx_lost.lineWidth = 1;
           ctx_lost.beginPath();
@@ -398,18 +354,11 @@ const drawImg = async () => {
           });
           ctx_lost.lineTo(testX.value + testWidth.value, testY.value);
           testPath.value.forEach((item) => {
-            item.direction === "right"
-              ? drawCircle(ctx_lost, item)
-              : "";
+            item.direction === "right" ? drawCircle(ctx_lost, item) : "";
           });
-          ctx_lost.lineTo(
-            testX.value + testWidth.value,
-            testY.value + testHeight.value
-          );
+          ctx_lost.lineTo(testX.value + testWidth.value, testY.value + testHeight.value);
           testPath.value.forEach((item) => {
-            item.direction === "bottom"
-              ? drawCircle(ctx_lost, item)
-              : "";
+            item.direction === "bottom" ? drawCircle(ctx_lost, item) : "";
           });
           ctx_lost.lineTo(testX.value, testY.value + testHeight.value);
           testPath.value.forEach((item) => {
@@ -440,14 +389,9 @@ const drawImg = async () => {
           testPath.value.forEach((item) => {
             item.direction === "right" ? drawCircle(ctx_one, item) : "";
           });
-          ctx_one.lineTo(
-            testX.value + testWidth.value,
-            testY.value + testHeight.value
-          );
+          ctx_one.lineTo(testX.value + testWidth.value, testY.value + testHeight.value);
           testPath.value.forEach((item) => {
-            item.direction === "bottom"
-              ? drawCircle(ctx_one, item)
-              : "";
+            item.direction === "bottom" ? drawCircle(ctx_one, item) : "";
           });
           ctx_one.lineTo(testX.value, testY.value + testHeight.value);
           testPath.value.forEach((item) => {
@@ -459,17 +403,7 @@ const drawImg = async () => {
           ctx_one.stroke();
           ctx_one.stroke();
           ctx_one.clip();
-          ctx_one.drawImage(
-            img,
-            0,
-            0,
-            img.width,
-            img.height,
-            0,
-            0,
-            c_one.width,
-            c_one.height
-          );
+          ctx_one.drawImage(img, 0, 0, img.width, img.height, 0, 0, c_one.width, c_one.height);
           ctx_one.restore();
         };
       }, 500);
@@ -506,80 +440,26 @@ const drawCircle = (ctx, path) => {
     case "top":
       changeY = path.much === "inside" ? changeY : -changeY;
       ctx.lineTo(testX.value + testWidth.value / 2 - changeX, testY.value);
-      ctx.arcTo(
-        testX.value + testWidth.value / 2 - changeX,
-        testY.value + changeY,
-        testX.value + testWidth.value / 2,
-        testY.value + changeY,
-        testr.value
-      );
-      ctx.arcTo(
-        testX.value + testWidth.value / 2 + changeX,
-        testY.value + changeY,
-        testX.value + testWidth.value / 2 + changeX,
-        testY.value,
-        testr.value
-      );
+      ctx.arcTo(testX.value + testWidth.value / 2 - changeX, testY.value + changeY, testX.value + testWidth.value / 2, testY.value + changeY, testr.value);
+      ctx.arcTo(testX.value + testWidth.value / 2 + changeX, testY.value + changeY, testX.value + testWidth.value / 2 + changeX, testY.value, testr.value);
       break;
     case "right":
       changeX = path.much === "inside" ? -changeX : changeX;
-      ctx.lineTo(
-        testX.value + testWidth.value,
-        testY.value + testHeight.value / 2 - changeY
-      );
-      ctx.arcTo(
-        testX.value + testWidth.value + changeX,
-        testY.value + testHeight.value / 2 - changeY,
-        testX.value + testWidth.value + changeX,
-        testY.value + testHeight.value / 2,
-        testr.value
-      );
-      ctx.arcTo(
-        testX.value + testWidth.value + changeX,
-        testY.value + testHeight.value / 2 + changeY,
-        testX.value + testWidth.value,
-        testY.value + testHeight.value / 2 + changeY,
-        testr.value
-      );
+      ctx.lineTo(testX.value + testWidth.value, testY.value + testHeight.value / 2 - changeY);
+      ctx.arcTo(testX.value + testWidth.value + changeX, testY.value + testHeight.value / 2 - changeY, testX.value + testWidth.value + changeX, testY.value + testHeight.value / 2, testr.value);
+      ctx.arcTo(testX.value + testWidth.value + changeX, testY.value + testHeight.value / 2 + changeY, testX.value + testWidth.value, testY.value + testHeight.value / 2 + changeY, testr.value);
       break;
     case "bottom":
       changeY = path.much === "inside" ? -changeY : changeY;
-      ctx.lineTo(
-        testX.value + testWidth.value / 2 + changeX,
-        testY.value + testHeight.value
-      );
-      ctx.arcTo(
-        testX.value + testWidth.value / 2 + changeX,
-        testY.value + testHeight.value + changeY,
-        testX.value + testWidth.value / 2,
-        testY.value + testHeight.value + changeY,
-        testr.value
-      );
-      ctx.arcTo(
-        testX.value + testWidth.value / 2 - changeX,
-        testY.value + testHeight.value + changeY,
-        testX.value + testWidth.value / 2 - changeX,
-        testY.value + testHeight.value,
-        testr.value
-      );
+      ctx.lineTo(testX.value + testWidth.value / 2 + changeX, testY.value + testHeight.value);
+      ctx.arcTo(testX.value + testWidth.value / 2 + changeX, testY.value + testHeight.value + changeY, testX.value + testWidth.value / 2, testY.value + testHeight.value + changeY, testr.value);
+      ctx.arcTo(testX.value + testWidth.value / 2 - changeX, testY.value + testHeight.value + changeY, testX.value + testWidth.value / 2 - changeX, testY.value + testHeight.value, testr.value);
       break;
     case "left":
       changeX = path.much === "inside" ? changeX : -changeX;
       ctx.lineTo(testX.value, testY.value + testHeight.value / 2 + changeY);
-      ctx.arcTo(
-        testX.value + changeX,
-        testY.value + testHeight.value / 2 + changeY,
-        testX.value + changeX,
-        testY.value + testHeight.value / 2,
-        testr.value
-      );
-      ctx.arcTo(
-        testX.value + changeX,
-        testY.value + testHeight.value / 2 - changeY,
-        testX.value,
-        testY.value + testHeight.value / 2 - changeY,
-        testr.value
-      );
+      ctx.arcTo(testX.value + changeX, testY.value + testHeight.value / 2 + changeY, testX.value + changeX, testY.value + testHeight.value / 2, testr.value);
+      ctx.arcTo(testX.value + changeX, testY.value + testHeight.value / 2 - changeY, testX.value, testY.value + testHeight.value / 2 - changeY, testr.value);
       break;
   }
 };
@@ -643,11 +523,7 @@ const dragMove = (e) => {
       dragBtn.value.style.left = "204px";
       testOne.value.style.left = moveMax.value + "px";
     } else {
-      testOne.value.style.left =
-        moveMin.value +
-        ((moveMax.value - moveMin.value) * (e.pageX - beginPageX.value)) /
-        (260 - 56) +
-        "px";
+      testOne.value.style.left = moveMin.value + ((moveMax.value - moveMin.value) * (e.pageX - beginPageX.value)) / (260 - 56) + "px";
       dragBtn.value.style.left = e.pageX - beginPageX.value + "px";
     }
   }
@@ -665,11 +541,9 @@ const dragUp = () => {
 };
 // 拖拽结果校验
 const checkResult = async () => {
-  console.log(parseInt(testOne.value.style.left) - moveMin.value + testr.value, '发 传出');
+  console.log(parseInt(testOne.value.style.left) + testX.value, '发 传出');
   const res = await props.setFunction({
-    x: encResult(
-      parseInt(testOne.value.style.left) - moveMin.value + testr.value
-    ),
+    x: encResult(parseInt(testOne.value.style.left) + testX.value),
     time: time.value,
   });
   percentage.value = res.data.percentage;
