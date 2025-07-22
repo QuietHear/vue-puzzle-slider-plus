@@ -4,7 +4,7 @@
 */
 /*
  * @LastEditors: aFei
- * @LastEditTime: 2023-09-22 13:35:42
+ * @LastEditTime: 2025-07-22 11:23:21
 */
 .vue-puzzle-slider-plus {
   position: relative;
@@ -12,7 +12,7 @@
   height  : 100%;
 
   .source {
-    background: url("source/source.png") no-repeat;
+    background: url("./../source/source.png") no-repeat;
   }
 
   .load-btn,
@@ -235,7 +235,7 @@
         width           : 32px;
         height          : 32px;
         background-size : contain;
-        background-image: url("source/load_content.gif");
+        background-image: url("./../source/load_content.gif");
       }
 
       p {
